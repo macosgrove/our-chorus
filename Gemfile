@@ -38,7 +38,7 @@ gem 'jquery-rails'
 # gem 'debugger'
 
 gem "mongo_mapper"
-gem "redgreen"
+gem "bson_ext"
 gem "shoulda"
 gem "factory_girl"
 gem "mocha"
