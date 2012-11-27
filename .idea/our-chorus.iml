@@ -61,7 +61,6 @@
     <orderEntry type="library" scope="PROVIDED" name="shoulda-context (v1.0.1, RVM: ruby-1.9.3-p286 [chorus]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="shoulda-matchers (v1.4.1, RVM: ruby-1.9.3-p286 [chorus]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="sprockets (v2.2.1, RVM: ruby-1.9.3-p286 [chorus]) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="sqlite3 (v1.3.6, RVM: ruby-1.9.3-p286 [chorus]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="thor (v0.16.0, RVM: ruby-1.9.3-p286 [chorus]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="tilt (v1.3.3, RVM: ruby-1.9.3-p286 [chorus]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="treetop (v1.4.12, RVM: ruby-1.9.3-p286 [chorus]) [gem]" level="application" />
