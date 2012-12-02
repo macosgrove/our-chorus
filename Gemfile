@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.9'
+gem 'rails', :branch => '3-2-stable'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -38,8 +38,10 @@ gem "mongo_mapper"
 gem "bson_ext"
 gem "shoulda"
 gem "factory_girl"
-gem "mocha"
+gem "mocha", '0.12'
 gem 'webrick', '~> 1.3.1'
 gem "haml"
 gem "haml-rails"
 gem "cancan"
+gem "devise"
+gem "mongoid"
