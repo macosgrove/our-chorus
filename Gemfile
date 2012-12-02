@@ -39,3 +39,7 @@ gem "bson_ext"
 gem "shoulda"
 gem "factory_girl"
 gem "mocha"
+gem 'webrick', '~> 1.3.1'
+gem "haml"
+gem "haml-rails"
+gem "cancan"
