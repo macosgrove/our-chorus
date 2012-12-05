@@ -1,0 +1,17 @@
+//------------------------------------------
+// global layout
+$max-width-size: 980px;
+$page-padding: 20px;
+$gutter: 20px;
+
+
+#container {
+  position: relative;
+  max-width: $max-width-size;
+  margin: 0 auto 20px auto;
+  @include container-style;
+} // body
+
+#main-header, #main, #main-footer { padding: $gutter $page-padding; }
+hr { margin: $gutter auto; }
+// set to true to choose use a max-width

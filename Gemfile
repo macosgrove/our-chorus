@@ -35,3 +35,5 @@ group :development, :test do
   gem 'spork', '0.9.2'
   gem 'capybara-webkit'
 end
+
+gem "compass-rails", :group => "assets"

@@ -1,13 +1,21 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the top of the
- * compiled file, but it's generally better to create a new file per style scope.
- *
- *= require_self
- *= require_tree .
-*/
+@import url(http:/\/fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic|Exo:200,300,400,500,600,700,800,900,200italic,300italic,400italic,500italic,600italic,900italic,800italic,700italic);
+@import "compass/utilities";
+@import "compass/css3";
+@import "compass/css3/user-interface";
+//---------------------------------------------------------------------------------
+// import seeds
+@import "base/base"; // reset, color-palette, typography, etc
+@import "themes/monochrome_theme"; // use the base-variables in a selected theme.
+@import "elements/elements"; // define visual styles for elements.
+@import "patterns/patterns"; // useful patterns for building.
+@import "sassyseeds";
+//---------------------------------------------------------------------------------
+// layout
+@import "screen_sizes";
+@import "layout";
+//---------------------------------------------------------------------------------
+// views
+
+//------------------
+// media queries
+//@import "rwd";
