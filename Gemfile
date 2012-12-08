@@ -21,6 +21,7 @@ gem "sassyseeds"
 
 group :development, :staging do
   gem "haml-rails"
+  gem "erb2haml"
   gem "letter_opener"
 end
 
