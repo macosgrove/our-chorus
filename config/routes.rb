@@ -1,5 +1,11 @@
 OurChorus::Application.routes.draw do
 
+  get "static_pages/our_vision"
+
+  get "static_pages/our_values"
+
+  get "static_pages/our_music"
+
   devise_for :users
   resources :users, only: [:show, :index]
 
@@ -53,6 +59,6 @@ OurChorus::Application.routes.draw do
   #     resources :products
   #   end
 
-  root :to => 'welcome#index'
+  root :to => 'static_pages#our_vision'
 
 end

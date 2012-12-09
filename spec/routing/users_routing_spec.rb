@@ -3,8 +3,6 @@ require "spec_helper"
 describe UsersController do
   describe "routing" do
 
-    #todo: destroy_user_session_path is generating a GET request - should be a DELETE request
-
     it "routes to #index" do
       get("/users").should route_to("users#index")
     end
