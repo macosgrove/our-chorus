@@ -28,7 +28,9 @@ end
 group :development, :test do
   gem 'rspec-rails'
   gem 'shoulda-matchers'
-  gem "factory_girl"
+  gem 'factory_girl'
+  gem 'email_spec'
+  gem 'faker'
   gem "mocha", "0.12"
   gem "database_cleaner", ">= 0.8.0"
   gem "mongoid-rspec", ">= 1.4.6"

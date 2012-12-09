@@ -42,10 +42,12 @@
     <orderEntry type="library" scope="PROVIDED" name="database_cleaner (v0.9.1, RVM: ruby-1.9.3-p286 [our-chorus]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="devise (v2.1.2, RVM: ruby-1.9.3-p286 [our-chorus]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="diff-lcs (v1.1.3, RVM: ruby-1.9.3-p286 [our-chorus]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="email_spec (v1.4.0, RVM: ruby-1.9.3-p286 [our-chorus]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="erb2haml (v0.1.2, RVM: ruby-1.9.3-p286 [our-chorus]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="erubis (v2.7.0, RVM: ruby-1.9.3-p286 [our-chorus]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="execjs (v1.4.0, RVM: ruby-1.9.3-p286 [our-chorus]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="factory_girl (v4.1.0, RVM: ruby-1.9.3-p286 [our-chorus]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="faker (v1.1.2, RVM: ruby-1.9.3-p286 [our-chorus]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="ffi (v1.2.0, RVM: ruby-1.9.3-p286 [our-chorus]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="fssm (v0.2.9, RVM: ruby-1.9.3-p286 [our-chorus]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="guard (v1.5.4, RVM: ruby-1.9.3-p286 [our-chorus]) [gem]" level="application" />
