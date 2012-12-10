@@ -1,2 +1,11 @@
-%h1 StaticPages#our_music
-%p Find me in app/views/static_pages/our_music.html.haml
+- content_for :title do
+  Our Music
+- content_for :body_id do
+  our-music
+- content_for :body_class do
+  our-music
+
+%section#our-music
+  %q
+    We love bringing pleasure to our audiences by singing harmonies that raise goosebumps, make the heart race, or bring tears to the eyes.
+%footer

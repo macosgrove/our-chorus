@@ -1,13 +1,14 @@
 %nav
-  = link_to "Home", :root
   %ul
     %li
-      %a{:href => "#"} Our Vision
+      = link_to 'Our Vision', static_pages_our_vision_path
     %li
-      %a{:href => "#"} Our Values
+      = link_to 'Our Values', static_pages_our_values_path
     %li
-      %a{:href => "#"} Our Members
+      = link_to 'Our Members', users_path
     %li
-      %a{:href => "#"} Our Music
+      = link_to 'Our Music', static_pages_our_music_path
+    %li
+      = link_to 'How We Operate', static_pages_how_we_operate_path
     %li
       = link_to "Join us!", new_user_registration_path

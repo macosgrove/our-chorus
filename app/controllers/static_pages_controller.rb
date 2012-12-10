@@ -7,4 +7,7 @@ class StaticPagesController < ApplicationController
 
   def our_music
   end
+
+  def how_we_operate
+  end
 end
