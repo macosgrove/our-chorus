@@ -1,0 +1,61 @@
+
+
+//-----------------------------------------
+// light coloured
+$h136-color: $purple;
+$h245-color: $maroon;
+$bodycopy-color: $violet;
+$body-text-shadow: $grey-violet;
+$body-bg-color: $palest-maroon;
+$bevel-color-light: $pale-purple;
+$bevel-color-dark: $grey-purple;
+$bevel-light-border: 1px solid $bevel-color-light;
+$bevel-dark-border: 1px solid $bevel-color-dark;
+
+// body
+$body-bg-texture: $noise;
+$body-bg: $body-bg-color $body-bg-texture;
+
+// header
+$header-bg-gradient-base: $body-bg-color;
+$header-bg-gradient-stop-1: darken($header-bg-gradient-base, 4);
+$header-bg-gradient-stop-2: darken($header-bg-gradient-base, 8);
+$header-bg-color: linear-gradient( top, $header-bg-gradient-stop-1, $header-bg-gradient-stop-2 );
+$header-bg-texture: $noise;
+$header-bg: $header-bg-texture, $header-bg-color;
+
+// links
+$link-color: $violet;
+$link-hover-color: lighten($link-color, 10);
+
+// global border-radius for buttons and forms
+$border-radius: 4px;
+
+// buttons
+$button-default-bg-color: $body-bg-color;
+$button-default-text-color: $bodycopy-color;
+$button-default-text-shadow: $body-text-shadow;
+
+// forms
+$input-bg: darken($body-bg-color, 3);
+$text-input-bg: $input-bg;
+$text-input-bg-focus: darken($text-input-bg, 3);
+$text-input-border-color: darken($body-bg-color, 10);
+$text-input-border-color-hover: darken($text-input-border-color, 10);
+$text-input-border: 1px solid $text-input-border-color;
+$unchecked-bg: $input-bg;
+$checked-bg: $input-bg;
+
+// pseudo selected state
+$selection-bg-color: $bodycopy-color;
+$selection-text-color: $body-bg-color;
+
+// table
+$table-bg-texture: $body-bg-texture;
+$table-bg-color: $body-bg-color;
+$table-bg: $table-bg-texture $table-bg-color;
+
+//blockquote
+$blockquote-bg-color: lighten($body-bg-color, 3);
+$blockquote-bg-texture: $body-bg-texture;
+$blockquote-bg: $blockquote-bg-color $blockquote-bg-texture;

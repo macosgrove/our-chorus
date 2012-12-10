@@ -5,7 +5,7 @@
 //---------------------------------------------------------------------------------
 // import seeds
 @import "base/base"; // reset, color-palette, typography, etc
-@import "themes/monochrome_theme"; // use the base-variables in a selected theme.
+@import "themes/_light_pages_theme"; // use the base-variables in a selected theme.
 @import "elements/elements"; // define visual styles for elements.
 @import "patterns/patterns"; // useful patterns for building.
 @import "sassyseeds";
