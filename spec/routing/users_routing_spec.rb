@@ -24,8 +24,7 @@ describe UsersController do
     end
 
     it "routes to #edit" do
-      pending "fix devise routing"
-      get("/users/1/edit").should route_to("devise/registrations#edit", :id => "1")
+      get("/users/edit/1").should route_to("devise/registrations#edit", :id => "1")
     end
 
     it "routes to #create" do
@@ -33,12 +32,10 @@ describe UsersController do
     end
 
     it "routes to #update" do
-      pending "fix devise routing"
       put("/users/1").should route_to("devise/registrations#update", :id => "1")
     end
 
     it "routes to #destroy" do
-      pending "fix devise routing"
       delete("/users/1").should route_to("devise/registrations#destroy", :id => "1")
     end
 
