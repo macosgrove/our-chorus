@@ -18,8 +18,8 @@
 }//@mixin
 
 @mixin container-style {
-  background: -webkit-radial-gradient(center center, circle farthest-corner, $white 0,  $palest-violet 80%, $pale-violet 100%);
-  background: -moz-radial-gradient(center center, circle farthest-corner, $white 0,  $palest-violet 80%, $pale-violet 100%);
+  background: -webkit-radial-gradient($radial-bg-gradient);
+  background: -moz-radial-gradient($radial-bg-gradient);
   @include box-shadow( 0 2px 10px 0 rgba(0,0,0, 0.7) );
 }//@mixin
 

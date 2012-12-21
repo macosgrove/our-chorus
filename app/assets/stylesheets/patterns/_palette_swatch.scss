@@ -23,10 +23,10 @@ $default-swatch-size: 100px;
   &:nth-of-type(7)  { background-color: $brightred; }
   &:nth-of-type(8)  { background-color: $darkred; }
   &:nth-of-type(9)  { background-color: $brick; }
-  &:nth-of-type(10) { background-color: $lightpurple; }
-  &:nth-of-type(11) { background-color: $darkpurple; }
+  &:nth-of-type(10) { background-color: $lightprimary; }
+  &:nth-of-type(11) { background-color: $darkprimary; }
   &:nth-of-type(12) { background-color: $lightorange; }
   &:nth-of-type(13) { background-color: $darkorange; }
   &:nth-of-type(14) { background-color: $pink; }
-  &:nth-of-type(15) { background-color: $maroon; }
+  &:nth-of-type(15) { background-color: $secondary1; }
 } // @mixin palette-discs

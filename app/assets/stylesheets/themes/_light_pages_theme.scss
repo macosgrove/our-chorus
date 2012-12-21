@@ -2,19 +2,20 @@
 
 //-----------------------------------------
 // light coloured
-$h136-color: $purple;
-$h245-color: $maroon;
-$bodycopy-color: $violet;
-$body-text-shadow: $grey-violet;
-$body-bg-color: $palest-maroon;
-$bevel-color-light: $pale-purple;
-$bevel-color-dark: $grey-purple;
+$h136-color: $primary;
+$h245-color: $secondary1;
+$bodycopy-color: $secondary2;
+$body-text-shadow: $grey-secondary2;
+$body-bg-color: lighten($palest-primary, 5);
+$bevel-color-light: $palest-primary;
+$bevel-color-dark: $grey-primary;
 $bevel-light-border: 1px solid $bevel-color-light;
 $bevel-dark-border: 1px solid $bevel-color-dark;
 
 // body
 $body-bg-texture: $noise;
 $body-bg: $body-bg-color $body-bg-texture;
+$radial-bg-gradient: center center, circle farthest-corner, lighten($palest-primary, 10) 0,  lighten($palest-primary, 5) 80%, $palest-primary 100%;
 
 // header
 $header-bg-gradient-base: $body-bg-color;
@@ -25,7 +26,7 @@ $header-bg-texture: $noise;
 $header-bg: $header-bg-texture, $header-bg-color;
 
 // links
-$link-color: $violet;
+$link-color: $secondary2;
 $link-hover-color: lighten($link-color, 10);
 
 // global border-radius for buttons and forms
@@ -38,6 +39,9 @@ $button-default-text-shadow: $body-text-shadow;
 
 // forms
 $input-bg: darken($body-bg-color, 3);
+input:-webkit-autofill {
+    color: $input-bg !important;
+}
 $text-input-bg: $input-bg;
 $text-input-bg-focus: darken($text-input-bg, 3);
 $text-input-border-color: darken($body-bg-color, 10);

@@ -57,6 +57,9 @@ $button-default-text-shadow: $body-text-shadow;
 
 // forms
 $input-bg: darken($body-bg-color, 3);
+input:-webkit-autofill {
+    color: $input-bg !important;
+}
 $text-input-bg: $input-bg;
 $text-input-bg-focus: darken($text-input-bg, 3);
 $text-input-border-color: darken($body-bg-color, 10);
