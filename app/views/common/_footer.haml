@@ -1,10 +1,14 @@
 %footer#main-footer
-  %p
-    %span.star *
-    Join us now to help choose our name!
+  %p.under-construction
+    This website is currently under construction. Further information is available on our
+    %a{:href => ""}community board.
 
+  %p
+    * Join us now to help choose our name!
+  %nav.nav-link
   = link_to "Sign in", new_user_session_path
-  |
-  = link_to "Sign out", destroy_user_session_path, :method => :delete
-  |
-  = link_to "Change your password", edit_user_registration_path
+  - if our_user.has_role? :developer
+    |
+    = link_to "Sign out", destroy_user_session_path, :method => :delete
+    |
+    = link_to "Change your password", edit_user_registration_path

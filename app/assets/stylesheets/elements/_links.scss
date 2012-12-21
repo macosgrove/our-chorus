@@ -1,4 +1,5 @@
 @mixin link {
+  font-weight: bold;
   @include transition( color 0.2s );
   &, &:visited { color: $link-color; }
   &:hover { color: $link-hover-color; }

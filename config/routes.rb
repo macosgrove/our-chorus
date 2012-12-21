@@ -13,6 +13,6 @@ OurChorus::Application.routes.draw do
   end
   resources :users, only: [:show, :index]
 
-  root :to => 'static_pages#our_vision'
+  root :to => 'static_pages#our_inception'
 
 end

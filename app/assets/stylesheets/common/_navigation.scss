@@ -1,8 +1,8 @@
-$campfire-logo-size: 70px;
+$logo-size: 70px;
 
 #main-nav {
   display: inline-block;
-  ul, .campfire-logo {
+  ul, .logo {
     display: inline-block;
     vertical-align: middle; } }
 
@@ -10,17 +10,18 @@ $campfire-logo-size: 70px;
 nav {
   li {
     @include nav-link;
-    display: inline-block; }
+    display: inline-block;
+    float: right}
   a {
     display: block;
     padding: 2px 5px; }
 }
 
-.campfire-logo {
-  background: $campfire-logo center center no-repeat;
+.logo {
+  background: $logo center center no-repeat;
   background-size: contain;
-  height: $campfire-logo-size;
-  width: $campfire-logo-size;
+  height: $logo-size;
+  width: $logo-size;
   overflow: hidden;
-  text-indent: $campfire-logo-size;
+  text-indent: $logo-size;
 }

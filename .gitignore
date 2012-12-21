@@ -9,3 +9,5 @@ coverage/**/*
 .idea/misc.xml
 .idea/workspace.xml
 public/index.html
+gimp
+public/assets

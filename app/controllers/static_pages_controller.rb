@@ -10,4 +10,8 @@ class StaticPagesController < ApplicationController
 
   def how_we_operate
   end
+
+  def our_inception
+
+  end
 end

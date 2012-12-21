@@ -10,3 +10,7 @@ unless User.find_for_database_authentication(login: 'maryannecos@gmail.com')
   founder = User.create!(username: 'macosgrove', password: 'ourchorusfounder', email: 'maryannecos@gmail.com')
   founder.add_role :founder
 end
+unless User.find_for_database_authentication(login: 'ourchorus.info@gmail.com')
+  developer = User.create!(username: 'dev', password: 'developer01', email: 'ourchorus.info@gmail.com')
+  developer.add_role :developer
+end

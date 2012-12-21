@@ -1,0 +1,27 @@
+- content_for :title do
+  Welcome to Our Chorus
+- content_for :body_id do
+  inception-page
+- content_for :body_class do
+  our-inception
+
+%h2 Join our chorus for our Sydney inception
+%h3 Sunday January 27 9:30am - 5pm
+%p.tag-line.centred Optional drinks and dinner afterwards
+%p.centred
+  Prospective members and observers are all welcome.
+%ul
+  %li Learn how a democratic, fully collaborative chorus can really work!
+  %li
+    = link_to 'Register as a member', new_user_registration_path
+    to help develop Our Values and Our Vision
+  %li Help choose Our Name
+%p.centred
+  Please
+  = link_to 'join us', new_user_registration_path
+  or
+  %a{:href => "mailto:ourchorus.info@gmail.com"} contact us
+  to receive location details.
+%p.centred
+  Download the
+  %a{:href => "http://tinyurl.com/cumqttf"} draft Program

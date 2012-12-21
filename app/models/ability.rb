@@ -27,13 +27,17 @@ class Ability
     user ||= User.new # guest user (not logged in) - can only view sign in page
     if user.has_role? :founder
       can :manage, :all
-    elsif user.has_role? :moderator
+    elsif user.has_role? :developer
       can :manage, :all
+    elsif user.has_role? :moderator
+      can :read, :all
     elsif user.has_role? :full_member
       can :read, :all
     elsif user.has_role? :prospective
       can :read, :all
     elsif user.has_role? :probationary
+      can :read, :all
+    else
       can :read, :all
     end
   end
