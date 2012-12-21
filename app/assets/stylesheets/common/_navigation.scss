@@ -1,0 +1,26 @@
+$campfire-logo-size: 70px;
+
+#main-nav {
+  display: inline-block;
+  ul, .campfire-logo {
+    display: inline-block;
+    vertical-align: middle; } }
+
+
+nav {
+  li {
+    @include nav-link;
+    display: inline-block; }
+  a {
+    display: block;
+    padding: 2px 5px; }
+}
+
+.campfire-logo {
+  background: $campfire-logo center center no-repeat;
+  background-size: contain;
+  height: $campfire-logo-size;
+  width: $campfire-logo-size;
+  overflow: hidden;
+  text-indent: $campfire-logo-size;
+}
