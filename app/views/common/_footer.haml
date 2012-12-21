@@ -1,14 +1,15 @@
 %footer#main-footer
   %p.under-construction
     This website is currently under construction. Further information is available on our
-    %a{:href => ""}community board.
+    %a{:href => "https://trello.com/board/public/50cfd5f341ca5cfc1f008517"}community board.
 
   %p
     * Join us now to help choose our name!
   -#%nav
   -#  %ul
-  -#    %li= link_to "Sign in", new_user_session_path
   -#    - if current_user
   -#      %li= link_to "Sign out", destroy_user_session_path, :method => :delete
+  -#    - else
+  -#      %li= link_to "Sign in", new_user_session_path
   -#    - if our_user.can? :edit, current_user
   -#      %li= link_to "Change your password", edit_user_registration_path
