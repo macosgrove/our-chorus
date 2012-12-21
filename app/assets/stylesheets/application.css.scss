@@ -14,8 +14,10 @@
 @import "screen_sizes";
 @import "layout";
 //---------------------------------------------------------------------------------
-// views
-@import "common";
+// common
+@import "common/common";
+//---------------------------------------------------------------------------------
+// pages
 @import "static_pages";
 //------------------
 // media queries

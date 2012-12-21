@@ -5,10 +5,10 @@
 
   %p
     * Join us now to help choose our name!
-  %nav.nav-link
-  = link_to "Sign in", new_user_session_path
-  - if our_user.has_role? :developer
-    |
-    = link_to "Sign out", destroy_user_session_path, :method => :delete
-    |
-    = link_to "Change your password", edit_user_registration_path
+  -#%nav
+  -#  %ul
+  -#    %li= link_to "Sign in", new_user_session_path
+  -#    - if current_user
+  -#      %li= link_to "Sign out", destroy_user_session_path, :method => :delete
+  -#    - if our_user.can? :edit, current_user
+  -#      %li= link_to "Change your password", edit_user_registration_path
