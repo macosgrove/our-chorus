@@ -39,4 +39,6 @@ group :development, :test do
   gem 'capybara-webkit'
 end
 
-gem "compass-rails", :group => "assets"
+group :ci do
+  gem 'ci_reporter', '~> 1.8.1'
+end

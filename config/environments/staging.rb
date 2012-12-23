@@ -1,4 +1,4 @@
-Campfire::Application.configure do
+OurChorus::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
 
   # Code is not reloaded between requests
@@ -52,7 +52,7 @@ Campfire::Application.configure do
   # config.action_mailer.raise_delivery_errors = false
 
   # Actionmailer host setting
-  config.action_mailer.default_url_options = { :host => 'campfirestaging.herokuapp.com/' }
+  config.action_mailer.default_url_options = { :host => 'ourchorus_staging.herokuapp.com/' }
   ActionMailer::Base.delivery_method = :smtp
   ActionMailer::Base.smtp_settings = {
     :address        => "smtp.sendgrid.net",

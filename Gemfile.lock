@@ -49,6 +49,8 @@ GEM
     childprocess (0.3.6)
       ffi (~> 1.0, >= 1.0.6)
     chunky_png (1.2.6)
+    ci_reporter (1.8.3)
+      builder (>= 2.1.2)
     coderay (1.0.8)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
@@ -242,6 +244,7 @@ DEPENDENCIES
   bson_ext
   cancan
   capybara-webkit
+  ci_reporter (~> 1.8.1)
   coffee-rails (~> 3.2.1)
   compass-rails
   database_cleaner (>= 0.8.0)
