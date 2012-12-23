@@ -41,8 +41,10 @@ describe UsersController do
     it "assigns all users as @users" do
       user = User.create! valid_attributes
       get :index, {}, valid_session
+      # macosgrove (founder) and dev (developer) are seeds
       assigns(:users).first.username.should eq 'macosgrove'
-      assigns(:users).second.username.should eq 'example'
+      assigns(:users).second.username.should eq 'dev'
+      assigns(:users).third.username.should eq 'example'
     end
   end
 
