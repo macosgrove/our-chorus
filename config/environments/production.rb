@@ -5,7 +5,7 @@ OurChorus::Application.configure do
   #config.active_support.deprecation = :log
 
    # Caching
-  #config.cache_classes = false
+  config.cache_classes = true
   config.consider_all_requests_local       = false
   #config.consider_all_requests_local       = true
   config.action_controller.perform_caching = true
@@ -14,7 +14,7 @@ OurChorus::Application.configure do
   # Action Mailer
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :letter_opener
-  config.action_mailer.default_url_options = { :host => 'ourchorus_staging.herokuapp.com/' }
+  config.action_mailer.default_url_options = { :host => 'our-chorus.org' }
   ActionMailer::Base.delivery_method = :smtp
   ActionMailer::Base.smtp_settings = {
     :address        => "smtp.sendgrid.net",

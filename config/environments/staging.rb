@@ -13,7 +13,7 @@ OurChorus::Application.configure do
   # Action Mailer
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :letter_opener
-  config.action_mailer.default_url_options = { :host => 'ourchorus_staging.herokuapp.com/' }
+  config.action_mailer.default_url_options = { :host => 'our-chorus-staging.herokuapp.com/' }
   ActionMailer::Base.delivery_method = :smtp
   ActionMailer::Base.smtp_settings = {
     :address        => "smtp.sendgrid.net",
