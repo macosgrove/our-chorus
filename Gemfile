@@ -42,6 +42,10 @@ group :development, :test do
   gem 'capybara-webkit'
 end
 
+group :staging, :production do
+  gem 'newrelic_rpm'
+end
+
 group :production do
   gem 'thin'
 end
