@@ -42,6 +42,10 @@ group :development, :test do
   gem 'capybara-webkit'
 end
 
+group :production do
+  gem 'thin'
+end
+
 group :ci do
   gem 'ci_reporter', '~> 1.8.1'
 end
