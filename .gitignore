@@ -6,8 +6,8 @@ tmp/**/*
 config/database.yml
 coverage/*
 coverage/**/*
-.idea/misc.xml
-.idea/workspace.xml
+.idea/*
+.idea/**/*
 public/index.html
 gimp
 public/assets
