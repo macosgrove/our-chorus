@@ -18,6 +18,7 @@ gem "devise"
 gem "cancan"
 gem "rolify"
 gem "sassyseeds"
+gem 'simple_form'
 
 group :development, :staging do
   gem "haml-rails"

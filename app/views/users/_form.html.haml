@@ -1,25 +1,16 @@
-= form_for @user do |f|
+= simple_form_for @user do |f|
   - if @user.errors.any?
     #error_explanation
-      %h2= "#{pluralize(@user.errors.count, "error")} prohibited this user from being saved:"
+      %h2= "#{pluralize(@user.errors.count, "error")} prevented this user from being saved:"
       %ul
         - @user.errors.full_messages.each do |msg|
           %li= msg
 
-  .field
-    = f.label :email
-    = f.text_field :email
-  .field
-    = f.label :password
-    = f.text_field :password
-  .field
-    = f.label :first_name
-    = f.text_field :first_name
-  .field
-    = f.label :last_name
-    = f.text_field :last_name
-  .field
-    = f.label :mobile
-    = f.text_field :mobile
+  = f.input :username
+  = f.input :first_name
+  = f.input :last_name
+  = f.input :email
+  = f.input :mobile
+  = f.input :about_me
   .actions
     = f.submit 'Save'

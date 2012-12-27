@@ -50,6 +50,7 @@ class User
   field :first_name, type: String
   field :last_name, type: String
   field :mobile, type: String
+  field :about_me, type: String
 
   # function to handle user's login via email or username
   def self.find_for_database_authentication(warden_conditions)

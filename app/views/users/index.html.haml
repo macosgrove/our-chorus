@@ -3,10 +3,10 @@
 %table
   %tr
     %th Email
-    %th Password
     %th First name
     %th Last name
     %th Mobile
+    %th About Me
     %th
     %th
     %th
@@ -14,13 +14,16 @@
   - @users.each do |user|
     %tr
       %td= user.email
-      %td= user.password
       %td= user.first_name
       %td= user.last_name
       %td= user.mobile
+      %td= user.about_me
       %td= link_to 'Show', user
       %td= link_to 'Edit', edit_user_registration_path(user)
-      %td= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' }
+      - if our_user == user
+        %td &nbsp;
+      - else
+        %td= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' }
 
 %br
 

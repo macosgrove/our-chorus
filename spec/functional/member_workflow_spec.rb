@@ -22,14 +22,17 @@ describe 'member workflow', :type => :request do
       page.should have_content 'Welcome'
     end
 
-    it "should allow a potential member to sign up" do
+    it "should allow a potential member to register" do
       visit new_user_registration_path
       fill_in 'Email', with: 'new@example.com'
       fill_in 'Username', with: 'newmember'
       fill_in 'Password', with: 'mypassword'
       fill_in 'Password confirmation' , with: 'mypassword'
-      click_button 'Sign up'
-      page.should have_content 'Welcome! You have signed up successfully.'
+      fill_in 'About me', with: 'I love singing.'
+      fill_in 'First name', with: 'Maisie'
+      fill_in 'Last name', with: 'Jones'
+      click_button 'Register'
+      page.should have_content 'Welcome! You have registered successfully.'
     end
   end
 
