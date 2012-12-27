@@ -1,9 +1,9 @@
 require 'functional/functional_helper'
 
 
-describe 'member workflow', :type => :request do
+describe 'public workflow', :type => :request do
 
-  context 'the member has not logged in' do
+  context 'the person has not registered' do
     it "should redirect to sign-in page after failed sign-in" do
       visit user_session_path
       fill_in 'Login', with: "wrong"
@@ -11,15 +11,6 @@ describe 'member workflow', :type => :request do
       click_button 'Sign in'
       should_be_on 'users/sign_in'
       page.should have_content 'Invalid login or password.'
-    end
-
-    it "should allow the founder to sign in" do
-      visit user_session_path
-      fill_in 'Login', with: "macosgrove"
-      fill_in 'Password', with: "ourchorusfounder"
-      click_button 'Sign in'
-      page.should have_content 'Signed in successfully.'
-      page.should have_content 'Welcome'
     end
 
     it "should allow a potential member to register" do
