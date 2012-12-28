@@ -1,6 +1,7 @@
 // one button mixin to rule them all.
 //
-$button-padding: 8px 14px;
+$button-padding: 6px 8px;
+$button-margin: 12px 0px;
 $button-border-radius: $border-radius;
 $button-shadow: inset 0 1px 3px 0 rgba(0,0,0, 0.7);
 $button-default-bg-color: $body-bg-color;
@@ -12,6 +13,7 @@ $button-default-text-shadow: $body-text-shadow;
   display: inline-block;
   cursor: pointer;
   padding: $button-padding;
+  margin: $button-margin;
   text-align: center;
   color: $button-default-text-color;
   text-shadow: $button-default-text-shadow;

@@ -1,0 +1,7 @@
+#user-edit
+  label { display: inline-block; font-weight: normal; width: 12em }
+  .hint { font-style: italic; font-size: 0.8em }
+
+#user-show
+  ul { margin-bottom: $gutter }
+  label { display: inline-block; font-weight: bold; width: 12em }
