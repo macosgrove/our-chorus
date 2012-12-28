@@ -51,6 +51,37 @@ describe User do
       mary.email.should eq('mary.smith@example.com')
     end
 
+    it 'should begin life with :prospective role' do
+      pending 'wip'
+      new_user.should have_role :prospective
+    end
+
   end
+
+  describe "abilities" do
+    subject { ability }
+    let(:ability){ Ability.new(user) }
+    let(:user){ nil }
+
+    context 'when is the founder' do
+      let(:user){ FactoryGirl.build(:founder) }
+
+      it{ should be_able_to(:manage, User.new) }
+      it{ should be_able_to(:view, Content.vision) }
+    end
+
+    context 'when is a full member' do
+      let(:user){ FactoryGirl.build(:full_member) }
+
+      it{ should be_able_to(:edit, user) }
+      it{ should_not be_able_to(:view, Content.vision) }
+    end
+
+    context 'when is a guest' do
+      it{ should_not be_able_to(:view, Content.vision)}
+    end
+
+  end
+
 
 end

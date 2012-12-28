@@ -13,4 +13,22 @@ describe 'founder workflow', :type => :request do
       page.should have_content 'Welcome'
     end
   end
+
+  context 'the founder has logged in' do
+    before do
+      sign_in_with('macosgrove', 'ourchorusfounder')
+    end
+
+    it 'should show navigational links' do
+      page.should have_link 'Our Vision'
+      page.should have_link 'Our Values'
+      page.should have_link 'Our Music'
+      page.should have_link 'Our Members'
+      page.should have_link 'How we Operate'
+      page.should have_link 'Sign out'
+      page.should_not have_link 'Sign in'
+      page.should_not have_link 'Join us!'
+      page.should have_link 'Change your Details'
+    end
+  end
 end

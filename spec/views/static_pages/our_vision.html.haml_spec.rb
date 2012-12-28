@@ -1,5 +1,10 @@
 require 'spec_helper'
 
 describe "static_pages/our_vision.html.haml" do
-  pending "add some examples to (or delete) #{__FILE__}"
+
+    it "should render header links with Sign in and Join us! options" do
+      render
+      rendered.should have_selector('q', text: 'We love bringing pleasure')
+    end
+
 end

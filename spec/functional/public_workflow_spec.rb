@@ -35,6 +35,19 @@ describe 'public workflow', :type => :request do
       page.should have_field('First name', with: 'Maisie')
       page.should have_field('Last name', with: 'Jones')
     end
+
+    it 'should show navigational links' do
+      visit root_path
+      page.should_not have_link 'Our Vision'
+      page.should_not have_link 'Our Values'
+      page.should_not have_link 'Our Music'
+      page.should_not have_link 'Our Members'
+      page.should_not have_link 'How We Operate'
+      page.should have_link 'Sign in'
+      page.should_not have_link 'Sign out'
+      page.should have_link 'Join us!'
+      page.should_not have_link 'Change your Details'
+    end
   end
 
 end

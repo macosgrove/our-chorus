@@ -12,6 +12,11 @@ class Content
     c.type = :values
     c
   end
+  def self.members
+    c = Content.new
+    c.type = :members
+    c
+  end
   def self.music
     c = Content.new
     c.type = :music

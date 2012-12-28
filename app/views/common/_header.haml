@@ -1,6 +1,5 @@
 %header#main-header
+  = render 'common/navigation'
   %h1 Our Chorus*
   %p.tag-line A dynamic, democratic harmony chorus? I'm excited!
-  - if our_user.has_role? :developer
-    = render 'common/navigation'
   = render 'common/messages'
