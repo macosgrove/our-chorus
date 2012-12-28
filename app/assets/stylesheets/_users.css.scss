@@ -1,5 +1,9 @@
-#user-edit, #user-register
+#user-edit
   label { display: inline-block; font-weight: normal; width: 12em }
+  .hint { font-style: italic; font-size: 0.8em }
+
+#user-register
+  label { display: inline-block; font-weight: normal; width: 12em; }
   .hint { font-style: italic; font-size: 0.8em }
 
 #user-show
