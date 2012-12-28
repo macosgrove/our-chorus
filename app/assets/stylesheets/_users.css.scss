@@ -1,7 +1,12 @@
-#user-edit
+#user-edit, #user-register
   label { display: inline-block; font-weight: normal; width: 12em }
   .hint { font-style: italic; font-size: 0.8em }
 
 #user-show
   ul { margin-bottom: $gutter }
   label { display: inline-block; font-weight: bold; width: 12em }
+
+#users-list
+  td { border: none; box-shadow: none;}
+  tr { border: none }
+  .about { border-bottom: 1px solid $bevel-color-light}

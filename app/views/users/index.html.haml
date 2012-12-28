@@ -8,30 +8,21 @@
 %h1 Our Members
 
 %table
-  %tr
-    %th Email
-    %th First name
-    %th Last name
-    %th Mobile
-    %th About Me
-    %th
-    %th
-    %th
 
   - @users.each do |user|
-    %tr
+    %tr.details
+      %td= user.full_name
       %td= user.email
-      %td= user.first_name
-      %td= user.last_name
       %td= user.mobile
-      %td= user.about_me
       %td= link_to 'Show', user
       %td= link_to 'Edit', edit_user_registration_path(user)
       - if our_user == user
         %td &nbsp;
       - else
         %td= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' }
-
+    %tr.about
+      %td &nbsp;
+      %td{:colspan => "5"}= user.about_me
 %br
 
 = link_to 'New User', new_user_registration_path

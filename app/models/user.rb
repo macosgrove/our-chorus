@@ -73,4 +73,8 @@ class User
   def pre_create_hook
     add_role(:prospective)
   end
+
+  def full_name
+    "#{first_name} #{last_name}"
+  end
 end
