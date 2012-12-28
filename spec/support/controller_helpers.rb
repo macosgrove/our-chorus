@@ -1,11 +1,17 @@
-module ControllerSupport
-  def login_founder
-    @request.env["devise.mapping"] = Devise.mappings[:user]
-    sign_in FactoryGirl.create(:founder)
+module ControllerHelpers
+  def sign_in(user = double('user'))
+    if user.nil?
+      request.env['warden'].stub(:authenticate!).
+        and_throw(:warden, {:scope => :user})
+      controller.stub :current_user => nil
+    else
+      request.env['warden'].stub :authenticate! => user
+      controller.stub :current_user => user
+    end
   end
+end
 
-  def login_member
-    @request.env["devise.mapping"] = Devise.mappings[:user]
-    sign_in FactoryGirl.create(:full_member)
-  end
+RSpec.configure do |config|
+  config.include Devise::TestHelpers, :type => :controller
+  config.include ControllerHelpers, :type => :controller
 end

@@ -62,4 +62,8 @@ class User
       where(conditions).first
     end
   end
+
+  def is_member?
+    (has_role? :founder) || (has_role? :probationer) || (has_role? :full_member) || (has_role? :prospective)
+  end
 end

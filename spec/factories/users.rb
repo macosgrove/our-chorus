@@ -12,11 +12,24 @@ FactoryGirl.define do
        end
     end
 
-    factory :probationary do
+    factory :full_member do
       after(:build) do |user|
-         user.add_role 'probationary'
+         user.add_role 'full_member'
        end
     end
+
+    factory :probationer do
+      after(:build) do |user|
+         user.add_role 'probationer'
+       end
+    end
+
+    factory :prospective do
+      after(:build) do |user|
+         user.add_role 'probationer'
+       end
+    end
+
   end
 
 

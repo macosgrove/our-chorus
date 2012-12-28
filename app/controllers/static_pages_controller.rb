@@ -12,6 +12,5 @@ class StaticPagesController < ApplicationController
   end
 
   def our_inception
-
   end
 end
