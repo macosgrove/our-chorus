@@ -19,9 +19,9 @@ gem "cancan"
 gem "rolify"
 gem "sassyseeds"
 gem 'simple_form'
+gem "haml-rails"
 
 group :development, :staging do
-  gem "haml-rails"
   gem "erb2haml"
 end
 
