@@ -55,6 +55,14 @@ describe User do
       new_user.should have_role :prospective
     end
 
+    it 'should have unique email address' do
+      expect { FactoryGirl.create(:user, email: 'mary.smith@example.com')}.to raise_error(Mongoid::Errors::Validations)
+    end
+
+    it 'should have unique username' do
+      expect { FactoryGirl.create(:user, username: 'msmith')}.to raise_error(Mongoid::Errors::Validations)
+    end
+
   end
 
   describe "abilities" do
