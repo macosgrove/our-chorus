@@ -37,4 +37,20 @@ describe User do
     end
   end
 
+  describe "saving" do
+    let!(:new_user) { FactoryGirl.create(:user,
+        first_name: 'Mary', last_name: 'Smith', username: 'msmith',
+        mobile: '12345', about_me: 'This is my song.', email: 'mary.smith@example.com')}
+
+    it 'should save all fields to the database' do
+      mary = User.where(username: 'msmith').first
+      mary.first_name.should eq('Mary')
+      mary.last_name.should eq('Smith')
+      mary.mobile.should eq('12345')
+      mary.about_me.should eq('This is my song.')
+      mary.email.should eq('mary.smith@example.com')
+    end
+
+  end
+
 end

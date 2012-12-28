@@ -13,7 +13,7 @@ class User
   field :email, :type => String, :default => ""
   field :encrypted_password, :type => String, :default => ""
   attr_accessor :login # will be either username or email
-  attr_accessible :login, :email, :username, :password, :password_confirmation
+  attr_accessible :login, :email, :username, :password, :password_confirmation, :first_name, :last_name, :mobile, :about_me
 
   validates_presence_of :email
   validates_presence_of :encrypted_password

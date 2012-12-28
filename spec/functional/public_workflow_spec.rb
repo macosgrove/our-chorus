@@ -24,6 +24,16 @@ describe 'public workflow', :type => :request do
       fill_in 'Last name', with: 'Jones'
       click_button 'Register'
       page.should have_content 'Welcome! You have registered successfully.'
+      visit edit_user_registration_path
+      should_be_on 'users/edit'
+      page.should have_field('Email', with: 'new@example.com')
+      page.should have_field('Username', with: 'newmember')
+      page.should have_field('Password')
+      page.should have_field('Password confirmation')
+      page.should have_field('Current password')
+      page.should have_field('About me', with: 'I love singing.')
+      page.should have_field('First name', with: 'Maisie')
+      page.should have_field('Last name', with: 'Jones')
     end
   end
 
