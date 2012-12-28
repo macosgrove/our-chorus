@@ -32,6 +32,8 @@ class User
   field :current_sign_in_ip, :type => String
   field :last_sign_in_ip, :type => String
 
+  before_create :pre_create_hook
+
   ## Confirmable
   # field :confirmation_token,   :type => String
   # field :confirmed_at,         :type => Time
@@ -65,5 +67,9 @@ class User
 
   def is_member?
     (has_role? :founder) || (has_role? :probationer) || (has_role? :full_member) || (has_role? :prospective)
+  end
+
+  def pre_create_hook
+    add_role(:prospective)
   end
 end

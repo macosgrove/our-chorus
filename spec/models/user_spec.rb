@@ -52,7 +52,6 @@ describe User do
     end
 
     it 'should begin life with :prospective role' do
-      pending 'wip'
       new_user.should have_role :prospective
     end
 
