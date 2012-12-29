@@ -1,28 +1,28 @@
-%nav
+%nav#main-nav
   %ul
     - if can? :view, Content.vision
-      %li
+      %li>
         = link_to 'Our Vision', static_pages_our_vision_path
     - if can? :view, Content.values
-      %li
+      %li>
         = link_to 'Our Values', static_pages_our_values_path
     - if can? :view, Content.members
-      %li
+      %li>
         = link_to 'Our Members', users_path
     - if can? :view, Content.music
-      %li
+      %li>
         = link_to 'Our Music', static_pages_our_music_path
     - if can? :view, Content.how_we_operate
-      %li
+      %li>
         = link_to 'How we Operate', static_pages_how_we_operate_path
     - if current_user
-      %li
+      %li>
         = link_to "Sign out", destroy_user_session_path, :method => :delete
     - else
-      %li
+      %li>
         = link_to "Sign in", new_user_session_path
-      %li
+      %li>
         = link_to "Join us!", new_user_registration_path
     - if can? :edit, our_user
-      %li
+      %li>
         = link_to "Change your Details", edit_user_registration_path

@@ -1,7 +1,6 @@
 $logo-size: 70px;
 
 #main-nav {
-  display: inline-block;
   ul, .logo {
     display: inline-block;
     vertical-align: middle; } }
@@ -10,8 +9,7 @@ $logo-size: 70px;
 nav {
   li {
     @include nav-link;
-    display: inline-block;
-    float: right}
+    display: inline-block}
   a {
     display: block;
     padding: 2px 5px; }

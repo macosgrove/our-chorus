@@ -1,3 +1,16 @@
+#header-body {
+  @include clearfix;
+}
+.right {
+  text-align: right;
+  display: inline-block;
+  float: right;
+}
+.left {
+  text-align: left;
+  display: inline-block;
+  float: left;
+}
 .current-user {
   display: inline-block;
   float: right;
@@ -7,4 +20,7 @@
   margin-left: auto;
   margin-right: auto;
   font-style: italic;
+}
+#action-hero {
+  margin-top: 1.5em;
 }
