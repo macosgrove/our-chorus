@@ -39,8 +39,8 @@ describe User do
 
   describe "saving" do
     let!(:new_user) { FactoryGirl.create(:user,
-        first_name: 'Mary', last_name: 'Smith', username: 'msmith',
-        mobile: '12345', about_me: 'This is my song.', email: 'mary.smith@example.com')}
+                                         first_name: 'Mary', last_name: 'Smith', username: 'msmith',
+                                         mobile: '12345', about_me: 'This is my song.', email: 'mary.smith@example.com') }
 
     it 'should save all fields to the database' do
       mary = User.where(username: 'msmith').first
@@ -56,36 +56,46 @@ describe User do
     end
 
     it 'should have unique email address' do
-      expect { FactoryGirl.create(:user, email: 'mary.smith@example.com')}.to raise_error(Mongoid::Errors::Validations)
+      expect { FactoryGirl.create(:user, email: 'mary.smith@example.com') }.to raise_error(Mongoid::Errors::Validations)
     end
 
     it 'should have unique username' do
-      expect { FactoryGirl.create(:user, username: 'msmith')}.to raise_error(Mongoid::Errors::Validations)
+      expect { FactoryGirl.create(:user, username: 'msmith') }.to raise_error(Mongoid::Errors::Validations)
     end
 
   end
 
+  describe "after create" do
+    it "should send welcome email" do
+      welcome_email = mock('email')
+      UserMailer = mock('mailer').as_null_object
+      UserMailer.should_receive(:welcome_email).and_return(welcome_email)
+      welcome_email.should_receive(:deliver)
+      FactoryGirl.create(:user)
+    end
+  end
+
   describe "abilities" do
     subject { ability }
-    let(:ability){ Ability.new(user) }
-    let(:user){ nil }
+    let(:ability) { Ability.new(user) }
+    let(:user) { nil }
 
     context 'when is the founder' do
-      let(:user){ FactoryGirl.build(:founder) }
+      let(:user) { FactoryGirl.build(:founder) }
 
-      it{ should be_able_to(:manage, User.new) }
-      it{ should be_able_to(:view, Content.vision) }
+      it { should be_able_to(:manage, User.new) }
+      it { should be_able_to(:view, Content.vision) }
     end
 
     context 'when is a full member' do
-      let(:user){ FactoryGirl.build(:full_member) }
+      let(:user) { FactoryGirl.build(:full_member) }
 
-      it{ should be_able_to(:edit, user) }
-      it{ should_not be_able_to(:view, Content.vision) }
+      it { should be_able_to(:edit, user) }
+      it { should_not be_able_to(:view, Content.vision) }
     end
 
     context 'when is a guest' do
-      it{ should_not be_able_to(:view, Content.vision)}
+      it { should_not be_able_to(:view, Content.vision) }
     end
 
   end
