@@ -37,7 +37,6 @@ describe "users/index" do
   end
 
   it "should remove the link from the Destroy on the currently logged in user" do
-    puts rendered
     rendered.should have_selector('table tr td a', text: 'Destroy', count: 1)
     rendered.should have_selector('table tr td', text: 'Destroy', count: 1)
   end

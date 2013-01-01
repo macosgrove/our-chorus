@@ -7,10 +7,10 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 unless User.find_for_database_authentication(login: 'maryannecos@gmail.com')
-  founder = User.create!(username: 'macosgrove', password: 'ourchorusfounder', email: 'maryannecos@gmail.com', first_name: 'Mary-Anne', last_name: 'Cosgrove', mobile: '0408 945 360')
+  founder = User.create!(username: 'macosgrove', password: 'ourchorusfounder', email: 'maryannecos@gmail.com', first_name: 'Mary-Anne', last_name: 'Cosgrove', mobile: '0408 945 360', send_emails: false)
   founder.add_role :founder
 end
 unless User.find_for_database_authentication(login: 'ourchorus.info@gmail.com')
-  developer = User.create!(username: 'dev', password: 'developer01', email: 'ourchorus.info@gmail.com', first_name: 'Website', last_name: 'Developer')
+  developer = User.create!(username: 'dev', password: 'developer01', email: 'ourchorus.info@gmail.com', first_name: 'Website', last_name: 'Developer', send_emails: false)
   developer.add_role :developer
 end

@@ -5,6 +5,10 @@ FactoryGirl.define do
     email { Faker::Internet.email }
     password 'pword01'
     password_confirmation 'pword01'
+    first_name { Faker::Name.first_name }
+    last_name { Faker::Name.last_name }
+    username { Faker::Lorem.word }
+    send_emails false
 
     factory :founder do
       after(:build) do |user|

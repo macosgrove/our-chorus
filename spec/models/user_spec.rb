@@ -71,7 +71,14 @@ describe User do
       UserMailer = mock('mailer').as_null_object
       UserMailer.should_receive(:welcome_email).and_return(welcome_email)
       welcome_email.should_receive(:deliver)
-      FactoryGirl.create(:user)
+      FactoryGirl.create(:user, send_emails: true)
+    end
+    it "should send notification email" do
+      notification_email = mock('email')
+      UserMailer = mock('mailer').as_null_object
+      UserMailer.should_receive(:notification_email).and_return(notification_email)
+      notification_email.should_receive(:deliver)
+      FactoryGirl.create(:user, send_emails: true)
     end
   end
 

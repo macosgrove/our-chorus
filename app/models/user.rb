@@ -13,7 +13,7 @@ class User
   field :email, :type => String, :default => ""
   field :encrypted_password, :type => String, :default => ""
   attr_accessor :login # will be either username or email
-  attr_accessible :login, :email, :username, :password, :password_confirmation, :first_name, :last_name, :mobile, :about_me
+  attr_accessible :login, :email, :username, :password, :password_confirmation, :first_name, :last_name, :mobile, :about_me, :send_emails
 
   validates_presence_of :email
   validates_presence_of :encrypted_password
@@ -34,6 +34,7 @@ class User
   field :last_sign_in_ip, :type => String
 
   before_create :pre_create_hook
+  after_create  :post_create_hook
 
   ## Confirmable
   # field :confirmation_token,   :type => String
@@ -54,6 +55,7 @@ class User
   field :last_name, type: String
   field :mobile, type: String
   field :about_me, type: String
+  attr_accessor :send_emails
 
   # function to handle user's login via email or username
   def self.find_for_database_authentication(warden_conditions)
@@ -72,6 +74,14 @@ class User
 
   def pre_create_hook
     add_role(:prospective)
+    self.send_emails = true if self.send_emails == nil
+  end
+
+  def post_create_hook
+    if self.send_emails
+      ::UserMailer.welcome_email(self).deliver
+      ::UserMailer.notification_email(self).deliver
+    end
   end
 
   def full_name
