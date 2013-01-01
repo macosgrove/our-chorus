@@ -16,7 +16,7 @@
       %td= user.mobile
       %td= link_to 'Show', user
       %td= link_to 'Edit', edit_user_registration_path(user)
-      - if our_user == user
+      - if current_user == user
         %td &nbsp;
       - else
         %td= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' }

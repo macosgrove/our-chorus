@@ -21,7 +21,7 @@ describe "users/index" do
                    :about_me => "I am special"
         )
     ])
-    view.stub(:our_user) { logged_in_user }
+    view.stub(:current_user) { logged_in_user }
     render
   end
 

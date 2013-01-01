@@ -11,7 +11,6 @@ describe 'registered member workflow', :type => :request do
 
   context 'the member has logged in' do
     it 'should show navigational links' do
-      pending 'Change your Details is not working'
       page.should_not have_link 'Our Vision'
       page.should_not have_link 'Our Values'
       page.should_not have_link 'Our Music'

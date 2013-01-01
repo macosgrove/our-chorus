@@ -101,6 +101,13 @@ describe User do
       it { should_not be_able_to(:view, Content.vision) }
     end
 
+    context 'when is a prospective member' do
+      let(:user) { FactoryGirl.build(:prospective) }
+
+      it { should be_able_to(:edit, user) }
+      it { should_not be_able_to(:view, Content.vision) }
+    end
+
     context 'when is a guest' do
       it { should_not be_able_to(:view, Content.vision) }
     end

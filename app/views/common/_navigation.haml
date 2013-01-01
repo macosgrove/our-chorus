@@ -15,14 +15,14 @@
     - if can? :view, Content.how_we_operate
       %li>
         = link_to 'How we Operate', static_pages_how_we_operate_path
-    - if current_user
+    - if user_signed_in?
       %li>
         = link_to "Sign out", destroy_user_session_path, :method => :delete
+      - if can? :edit, current_user
+        %li>
+          = link_to "Change your Details", edit_user_registration_path
     - else
       %li>
         = link_to "Sign in", new_user_session_path
       %li>
         = link_to "Join us!", new_user_registration_path
-    - if can? :edit, our_user
-      %li>
-        = link_to "Change your Details", edit_user_registration_path
