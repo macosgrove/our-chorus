@@ -25,11 +25,11 @@ class Ability
     #
     # See the wiki for details: https://github.com/ryanb/cancan/wiki/Defining-Abilities
     user ||= User.new # guest user (not logged in) - can only view sign in page
+    can :view, Content, :type => :vision
     if user.is_member?
       can :edit, User, :username => user.username
       if user.has_role? :founder
         can :manage, :all
-        can :view, Content, :type => :vision
       end
     end
     if user.has_role? :developer
