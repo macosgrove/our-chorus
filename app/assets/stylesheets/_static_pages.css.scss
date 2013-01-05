@@ -1,4 +1,4 @@
-.our-inception {
+.our-inception, .our-values {
   h2, h3, .centred {
     text-align: center;
     margin-left: auto;
@@ -11,7 +11,7 @@
   p {
     margin-bottom: 1em;
   }
-  ul.summary {
+  ul.bullets {
     width: 32em;
     padding: 10px;
     margin-right: auto;
@@ -24,6 +24,11 @@
       list-style: inherit;
       list-style-type: disc;
     }
+  }
+}
+.our-values {
+  ul.bullets {
+    width: 38em;
   }
 }
 .hero-quote {

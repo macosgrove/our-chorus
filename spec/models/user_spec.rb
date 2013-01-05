@@ -92,6 +92,8 @@ describe User do
 
       it { should be_able_to(:manage, User.new) }
       it { should be_able_to(:view, Content.vision) }
+      it { should be_able_to(:view, Content.values) }
+      it { should be_able_to(:view, Content.music) }
     end
 
     context 'when is a full member' do
@@ -99,7 +101,8 @@ describe User do
 
       it { should be_able_to(:edit, user) }
       it { should be_able_to(:view, Content.vision) }
-      it { should_not be_able_to(:view, Content.values) }
+      it { should be_able_to(:view, Content.values) }
+      it { should_not be_able_to(:view, Content.music) }
     end
 
     context 'when is a prospective member' do
@@ -107,12 +110,14 @@ describe User do
 
       it { should be_able_to(:edit, user) }
       it { should be_able_to(:view, Content.vision) }
-      it { should_not be_able_to(:view, Content.values) }
+      it { should be_able_to(:view, Content.values) }
+      it { should_not be_able_to(:view, Content.music) }
     end
 
     context 'when is a guest' do
       it { should be_able_to(:view, Content.vision) }
-      it { should_not be_able_to(:view, Content.values) }
+      it { should be_able_to(:view, Content.values) }
+      it { should_not be_able_to(:view, Content.music) }
     end
 
   end

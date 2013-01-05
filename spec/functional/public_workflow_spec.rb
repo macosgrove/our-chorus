@@ -39,7 +39,7 @@ describe 'public workflow', :type => :request do
     it 'should show navigational links' do
       visit root_path
       page.should have_link 'Our Vision'
-      page.should_not have_link 'Our Values'
+      page.should have_link 'Our Values'
       page.should_not have_link 'Our Music'
       page.should_not have_link 'Our Members'
       page.should_not have_link 'How We Operate'
