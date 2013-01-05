@@ -23,6 +23,13 @@ $blockquote-padding: $blockquote-padding-vertical $blockquote-paddding-horizonta
     $blockquote-large-border-radius
     $blockquote-small-border-radius );
 
-  &:before { content: " \"\ "; }
+  &:before {
+    content: "\201C"; font-size: 4em; font-weight: bold;
+    display: block; float: left;
+    color: fade-out($secondary1, 0.5)}
+  &:after {
+    content: "\201D"; font-size: 4em; font-weight: bold;
+    display: block; float: right;
+    color: fade-out($secondary1, 0.5)}
 }//@mixin
 //--------------------------------------------------------

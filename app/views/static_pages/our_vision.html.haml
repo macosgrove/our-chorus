@@ -1,12 +1,23 @@
 - content_for :title do
-  Welcome to Our Chorus
+  Our Vision
 - content_for :body_id do
-  welcome-page
+  our-vision
 - content_for :body_class do
-  welcome
+  our-vision
 
 %section#vision.quote
-  %q
-    We love bringing pleasure to our audiences by singing harmonies that raise goosebumps, make the heart race, or bring tears to the eyes.
-    -# todo: basic styling
-    -# todo: new user questionnaire
+  %p A vision:
+  %blockquote.hero-quote
+    %p
+      We love bringing pleasure to our audiences by
+      %br/
+      singing harmonies that raise goosebumps,
+      %br/
+      make the heart race, or
+      %br/
+      bring tears to the eyes.
+  %p
+    Help turn this into
+    %em Our Vision.
+    = link_to "Join us", new_user_registration_path
+    at our Inception on February 9!
