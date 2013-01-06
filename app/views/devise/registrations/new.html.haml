@@ -16,6 +16,10 @@
   = f.input :about_me, :as => :text, :input_html => { :cols => 50, :rows => 7 }
   = f.input :password, :autocomplete => "off"
   = f.input :password_confirmation, :autocomplete => "off"
+  %p
+    Attach a
+    %a{:href => "https://en.gravatar.com/", :target=>"_blank"} Gravatar
+    to your email address if you want a picture of yourself to display on our members list, otherwise a random avatar will be assigned to you.
   = render 'common/privacy'
   .actions
     = f.submit 'Register'

@@ -18,6 +18,10 @@
   = f.input :password, :autocomplete => "off", :hint => "(leave blank if you don't want to change it)"
   = f.input :password_confirmation, :autocomplete => "off"
   = f.input :current_password, :hint => "(we need your current password to confirm your changes)"
+  %p
+    Attach a
+    %a{:href => "https://en.gravatar.com/", :target=>"_blank"} Gravatar
+    to your email address if you want a picture of yourself to display on our members list, otherwise a random avatar will be assigned to you.
   = render 'common/privacy'
   .actions
     = f.submit 'Update'
