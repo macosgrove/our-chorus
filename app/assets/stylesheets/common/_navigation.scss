@@ -9,10 +9,12 @@ $logo-size: 70px;
 nav {
   li {
     @include nav-link;
-    display: inline-block}
-  a {
-    display: block;
-    padding: 2px 5px; }
+    display: inline-block;
+    padding: 2px 5px;
+  }
+}
+nav.page-links {
+  margin-top: $gutter;
 }
 
 .logo {
