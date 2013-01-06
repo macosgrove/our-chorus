@@ -11,6 +11,11 @@ OurChorus::Application.routes.draw do
     put "/users/:id" => "devise/registrations#update"
     delete "/users/:id" => "devise/registrations#destroy"
   end
+  resources :users do
+    collection do
+      get 'list'
+    end
+  end
   resources :users, only: [:show, :index]
 
   root :to => 'static_pages#our_inception'

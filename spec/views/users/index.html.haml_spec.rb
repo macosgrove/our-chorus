@@ -27,6 +27,8 @@ describe "users/index" do
 
   it "renders a list of users" do
     rendered.should have_selector('table tr td', text: "This")
+    rendered.should have_selector('table tr td', text: "Email")
+    rendered.should_not have_selector('table tr td', text: "Password")
     rendered.should have_selector('table tr td', text: "Is Me")
     rendered.should have_selector('table tr td', text: "Someone")
     rendered.should have_selector('table tr td', text: "Else")

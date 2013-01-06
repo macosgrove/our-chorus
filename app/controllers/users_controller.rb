@@ -13,6 +13,17 @@ class UsersController < ApplicationController
     end
   end
 
+  # GET /users/list
+  # GET /users/list.json
+  def list
+    @users = User.all.to_a
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @users }
+    end
+  end
+
   # GET /users/1
   # GET /users/1.json
   def show

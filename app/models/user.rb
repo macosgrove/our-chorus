@@ -1,5 +1,7 @@
 class User
   include Mongoid::Document
+  include Gravtastic
+  gravtastic
   rolify
 
   # Include default devise modules. Others available are:

@@ -20,6 +20,7 @@ gem "rolify"
 gem "sassyseeds"
 gem 'simple_form'
 gem "haml-rails"
+gem "gravtastic"
 
 group :development, :staging do
   gem "erb2haml"

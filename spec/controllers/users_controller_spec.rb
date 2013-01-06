@@ -15,6 +15,13 @@ describe UsersController do
       end
     end
 
+    describe "GET list" do
+      it "should deny access" do
+        get :index, {}
+        response.should redirect_to(root_url)
+      end
+    end
+
     describe "GET show" do
       it "should deny access" do
         user = FactoryGirl.create(:full_member)
@@ -39,6 +46,23 @@ describe UsersController do
       it "assigns all users as @users" do
         FactoryGirl.create(:user, username: 'example')
         get :index, {}
+        # macosgrove (founder) and dev (developer) are seeds
+        assigns(:users).first.username.should eq 'macosgrove'
+        assigns(:users).second.username.should eq 'dev'
+        assigns(:users).third.username.should eq 'loggedinuser'
+        assigns(:users).fourth.username.should eq 'example'
+      end
+    end
+
+    describe "GET list" do
+      it "should not deny access" do
+        get :list, {}
+        response.should render_template("users/list")
+      end
+
+      it "assigns all users as @users" do
+        FactoryGirl.create(:user, username: 'example')
+        get :list, {}
         # macosgrove (founder) and dev (developer) are seeds
         assigns(:users).first.username.should eq 'macosgrove'
         assigns(:users).second.username.should eq 'dev'

@@ -6,9 +6,12 @@
     - if can? :view, Content.values
       %li>
         = link_to 'Our Values', static_pages_our_values_path
-    - if can? :view, Content.members
+    - if can? :manage, User
       %li>
         = link_to 'Our Members', users_path
+      - elsif can? :list, User
+        %li>
+          = link_to 'Our Members', list_users_path
     - if can? :view, Content.music
       %li>
         = link_to 'Our Music', static_pages_our_music_path

@@ -1,0 +1,21 @@
+- content_for :title do
+  Our Members
+- content_for :body_id do
+  users-list-public
+- content_for :body_class do
+  public-page
+
+%h1 Our Members
+
+.members
+
+  - @users.shuffle.each do |user|
+    %hr
+    .member
+      .avatar
+        = image_tag user.gravatar_url(:default => "monsterid")
+      .details
+        %p.name= user.full_name
+        %p= user.about_me
+%br
+
