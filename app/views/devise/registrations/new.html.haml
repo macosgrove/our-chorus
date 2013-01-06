@@ -13,9 +13,10 @@
   = f.input :last_name
   = f.input :email
   = f.input :mobile
-  = f.input :about_me, :as => :text, :input_html => { :cols => 50, :rows => 7 }
+  = f.input :about_me, :as => :text, :input_html => { :cols => 50, :rows => 7 }, :hint => "(tell our other members a bit about yourself)"
   = f.input :password, :autocomplete => "off"
   = f.input :password_confirmation, :autocomplete => "off"
+  = render 'common/privacy'
   .actions
     = f.submit 'Register'
 = render "devise/shared/links"

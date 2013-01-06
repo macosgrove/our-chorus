@@ -1,16 +1,26 @@
-#user-edit
+#user-edit {
   label { display: inline-block; font-weight: normal; width: 12em }
   .hint { font-style: italic; font-size: 0.8em }
+}
 
-#user-register
+#user-register {
   label { display: inline-block; font-weight: normal; width: 12em; }
   .hint { font-style: italic; font-size: 0.8em }
+}
 
-#user-show
+#user-show {
   ul { margin-bottom: $gutter }
   label { display: inline-block; font-weight: bold; width: 12em }
+}
 
-#users-list
+#users-list {
   td { border: none; box-shadow: none;}
   tr { border: none }
   .about { border-bottom: 1px solid $bevel-color-light}
+}
+
+.privacy {
+  h3 { font-size: 0.9em; font-weight: bold; cursor: pointer; color: $link-color; margin-top: 1em;}
+  h3:hover {color: $link-hover-color;}
+  p { font-size: 0.9em; line-height: 1.2em; margin-bottom: 1em;}
+}
