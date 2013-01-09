@@ -135,7 +135,7 @@ describe UsersController do
       it "renders the registration template" do
         user = FactoryGirl.create(:user)
         get :edit, {:id => user.to_param}
-        response.should render_template("devise/registrations/edit")
+        response.should render_template("users/edit")
       end
     end
   end
