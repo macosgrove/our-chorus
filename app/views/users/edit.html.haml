@@ -1,0 +1,21 @@
+- content_for :title do
+  Edit Member
+- content_for :body_id do
+  user-edit
+- content_for :body_class do
+  user-page
+
+%h2
+  Change Member Details
+= simple_form_for(@user) do |f|
+  = f.error_notification
+  = f.input :username
+  = f.input :first_name
+  = f.input :last_name
+  = f.input :email
+  = f.input :mobile
+  = f.input :about_me, :as => :text, :input_html => { :cols => 50, :rows => 7 }
+  .actions
+    = f.submit 'Update'
+%nav.page-links
+  = link_to "Back", :back

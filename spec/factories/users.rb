@@ -30,7 +30,7 @@ FactoryGirl.define do
 
     factory :prospective do
       after(:build) do |user|
-         user.add_role 'probationer'
+         user.add_role 'prospective'
        end
     end
 

@@ -14,16 +14,16 @@
       %td= user.full_name
       %td= user.email
       %td= user.mobile
-      %td= link_to 'Show', user
-      %td= link_to 'Edit', edit_user_registration_path(user)
+      %td= link_to 'Show', user_path(user)
+      %td= link_to 'Edit', edit_user_path(user)
       - if current_user == user
         %td &nbsp;
       - else
-        %td= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' }
+        %td= link_to 'Destroy', user, method: :delete, data: { confirm: "Are you sure you want to remove #{user.full_name}?" }
     %tr.about
       %td &nbsp;
       %td{:colspan => "5"}= user.about_me
 %br
 
 %nav.page-links
-  = link_to 'New User', new_user_registration_path
+  = link_to 'New User', new_user_path

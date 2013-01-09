@@ -30,6 +30,9 @@ class Ability
     if user.is_member?
       can :list, User
       can :edit, User, :username => user.username
+      if user.has_role? :full_member
+        can :manage, User
+      end
       if user.has_role? :founder
         can :manage, :all
       end
