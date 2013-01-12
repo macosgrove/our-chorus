@@ -1,5 +1,4 @@
-require 'functional/functional_helper'
-
+require 'features/functional_helper'
 
 describe 'founder workflow', :type => :request do
 
@@ -10,7 +9,7 @@ describe 'founder workflow', :type => :request do
       fill_in 'Password', with: "ourchorusfounder"
       click_button 'Sign in'
       page.should have_content 'Signed in successfully.'
-      page.should have_content 'Welcome'
+      page.should have_content 'Come to the Inception of Our Chorus'
     end
   end
 

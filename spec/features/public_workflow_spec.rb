@@ -1,4 +1,4 @@
-require 'functional/functional_helper'
+require 'features/functional_helper'
 
 
 describe 'public workflow', :type => :request do
@@ -10,15 +10,15 @@ describe 'public workflow', :type => :request do
       fill_in 'Password', with: "wrong"
       click_button 'Sign in'
       should_be_on 'users/sign_in'
-      page.should have_content 'Invalid login or password.'
+      page.should have_content 'Invalid email or password.' #should say 'login' not 'email' WTF?
     end
 
     it "should allow a potential member to register" do
       visit new_user_registration_path
       fill_in 'Email', with: 'new@example.com'
       fill_in 'Username', with: 'newmember'
-      fill_in 'Password', with: 'mypassword'
-      fill_in 'Password confirmation' , with: 'mypassword'
+      fill_in 'user_password', with: 'mypassword'
+      fill_in 'user_password_confirmation' , with: 'mypassword'
       fill_in 'About me', with: 'I love singing.'
       fill_in 'First name', with: 'Maisie'
       fill_in 'Last name', with: 'Jones'

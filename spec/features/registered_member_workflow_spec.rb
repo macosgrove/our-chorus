@@ -1,4 +1,4 @@
-require 'functional/functional_helper'
+require 'features/functional_helper'
 
 
 describe 'registered member workflow', :type => :request do

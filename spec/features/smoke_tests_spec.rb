@@ -1,4 +1,4 @@
-require 'functional/functional_helper'
+require 'features/functional_helper'
 
 
 describe 'the Production site', :type => :request do
