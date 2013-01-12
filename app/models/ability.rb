@@ -27,8 +27,8 @@ class Ability
     user ||= User.new # guest user (not logged in) - can only view sign in page
     can :view, Content, :type => :vision
     can :view, Content, :type => :values
+    can :list, User
     if user.is_member?
-      can :list, User
       can :edit, User, :username => user.username
       if user.has_role? :full_member
         can :manage, User

@@ -100,6 +100,7 @@ describe User do
       let(:user) { FactoryGirl.build(:full_member) }
 
       it { should be_able_to(:edit, user) }
+      it { should be_able_to(:index, User) }
       it { should be_able_to(:view, Content.vision) }
       it { should be_able_to(:view, Content.values) }
       it { should_not be_able_to(:view, Content.music) }
@@ -115,6 +116,7 @@ describe User do
     end
 
     context 'when is a guest' do
+      it { should be_able_to(:list, User) }
       it { should be_able_to(:view, Content.vision) }
       it { should be_able_to(:view, Content.values) }
       it { should_not be_able_to(:view, Content.music) }
