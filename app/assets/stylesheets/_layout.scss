@@ -5,13 +5,43 @@ $page-padding: 20px;
 $gutter: 20px;
 
 
+#wrapper {
+}
+
+#top-notes {
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index:2;
+  width: 300px;
+}
+#main {
+  position: relative;
+}
+#main-header {
+  position: relative;
+  z-index:3;
+}
 #container {
   position: relative;
   max-width: $max-width-size;
   margin: 0 auto 20px auto;
   @include container-style;
+  z-index:3;
 } // body
 
+#main-footer {
+  position: relative;
+  display: inline;
+  z-index:3;
+}
+#bottom-notes {
+  position: relative;
+  left:0;
+  bottom:150px;
+  z-index:2;
+  width: 300px;
+}
 #main-header, #main, #main-footer { padding: $gutter $page-padding; }
 hr { margin: $gutter auto; }
 // set to true to choose use a max-width

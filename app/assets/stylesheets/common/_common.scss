@@ -1,3 +1,16 @@
 @import "header";
 @import "footer";
 @import "navigation";
+
+.right {
+  text-align: right;
+  display: inline-block;
+  float: right;
+}
+.left {
+  text-align: left;
+  display: inline-block;
+  float: left;
+}
+
+

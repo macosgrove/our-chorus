@@ -15,8 +15,11 @@
     = javascript_include_tag :application
     = csrf_meta_tags
   %body{id: "#{body_id}", class: "#{body_class}"}
-    = render 'common/header'
-    #container
-      %section#main{:role => "main"}
-        = yield
-    = render 'common/footer'
+    #wrapper
+      %img#top-notes{:src => "/assets/notes_top_right.png", :alt => "musical notes"}
+      = render 'common/header'
+      #container
+        %section#main{:role => "main"}
+          = yield
+      = render 'common/footer'
+      %img#bottom-notes{:src => "/assets/notes_bottom_left.png", :alt => "musical notes"}

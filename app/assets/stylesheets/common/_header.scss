@@ -1,15 +1,12 @@
 #header-body {
   @include clearfix;
 }
-.right {
-  text-align: right;
-  display: inline-block;
-  float: right;
+#our-logo {
+  margin-right: 30px;
+  width: 150px;
 }
-.left {
-  text-align: left;
-  display: inline-block;
-  float: left;
+#our-name {
+  margin-top: 10px;
 }
 .current-user {
   display: inline-block;

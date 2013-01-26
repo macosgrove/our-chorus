@@ -12,6 +12,9 @@ nav {
     display: inline-block;
     padding: 2px 5px;
   }
+  li:first-child {
+    padding-left: 0px;
+  }
 }
 nav.page-links {
   margin-top: $gutter;
