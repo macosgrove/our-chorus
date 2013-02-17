@@ -9,7 +9,6 @@ describe 'founder workflow', :type => :request do
       fill_in 'Password', with: "ourchorusfounder"
       click_button 'Sign in'
       page.should have_content 'Signed in successfully.'
-      page.should have_content 'Come to the Inception of Our Chorus'
     end
   end
 

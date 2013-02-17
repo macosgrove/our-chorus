@@ -22,9 +22,14 @@ class Content
     c.type = :music
     c
   end
-  def self.how_we_operate
+  def self.practices
     c = Content.new
-    c.type = :how_we_operate
+    c.type = :practices
+    c
+  end
+  def self.principles
+    c = Content.new
+    c.type = :principles
     c
   end
 end

@@ -3,7 +3,6 @@ require "spec_helper"
 def validate_welcome_email_content(text)
   text.should match(/Hi James/)
   text.should match(/Thanks for registering for Our Chorus/)
-  text.should match(/Please spend a few moments to complete/)
   text.should match(/Mary-Anne Cosgrove/)
   text.should match(/Our Chorus Founder/)
 end

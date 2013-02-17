@@ -8,9 +8,7 @@ class StaticPagesController < ApplicationController
   def our_music
   end
 
-  def how_we_operate
+  def our_practices
   end
 
-  def our_inception
-  end
 end

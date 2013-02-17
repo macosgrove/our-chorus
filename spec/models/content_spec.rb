@@ -11,7 +11,7 @@ describe Content do
     Content.music.type.should be(:music)
   end
   it 'should create how_we_operate' do
-    Content.how_we_operate.type.should be(:how_we_operate)
+    Content.practices.type.should be(:practices)
   end
 
 end

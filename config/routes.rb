@@ -12,6 +12,6 @@ OurChorus::Application.routes.draw do
     end
   end
 
-  root :to => 'static_pages#our_inception'
+  root :to => 'static_pages#our_vision'
 
 end
