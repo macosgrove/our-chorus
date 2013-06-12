@@ -31,10 +31,10 @@ describe UsersController do
     end
   end
 
-  context "A prospective member is logged in" do
+  context "A provisional member is logged in" do
 
     before :each do
-      sign_in FactoryGirl.create(:prospective, username: 'loggedinuser')
+      sign_in FactoryGirl.create(:provisional, username: 'loggedinuser')
     end
 
     describe "GET index" do

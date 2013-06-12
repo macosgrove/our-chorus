@@ -12,25 +12,26 @@ FactoryGirl.define do
 
     factory :founder do
       after(:build) do |user|
-         user.add_role 'founder'
+         user.add_role :founder
+         user.add_role :provisional
        end
     end
 
     factory :full_member do
       after(:build) do |user|
-         user.add_role 'full_member'
+         user.add_role :full_member
        end
     end
 
-    factory :probationer do
+    factory :provisional do
       after(:build) do |user|
-         user.add_role 'probationer'
+         user.add_role :provisional
        end
     end
 
-    factory :prospective do
+    factory :course_attendee do
       after(:build) do |user|
-         user.add_role 'prospective'
+         user.add_role :course_attendee
        end
     end
 

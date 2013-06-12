@@ -71,11 +71,11 @@ class User
   end
 
   def is_member?
-    (has_role? :founder) || (has_role? :probationer) || (has_role? :full_member) || (has_role? :prospective)
+    (has_role? :founder) || (has_role? :provisional) || (has_role? :full_member)
   end
 
   def pre_create_hook
-    add_role(:prospective)
+    add_role(:provisional)
     self.send_emails = true if self.send_emails == nil
   end
 
@@ -88,5 +88,10 @@ class User
 
   def full_name
     "#{first_name} #{last_name}"
+  end
+
+  def set_status(new_status)
+    roles.each { |role| remove_role(role.name) unless role.name=='founder' || role.name=='developer'}
+    add_role(new_status)
   end
 end

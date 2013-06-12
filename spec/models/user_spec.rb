@@ -25,15 +25,15 @@ describe User do
     end
   end
 
-  describe "probationer member" do
-    let(:probie) { FactoryGirl.build(:probationer) }
+  describe "provisional member" do
+    let(:provisional) { FactoryGirl.build(:provisional) }
     it 'should not be allowed to create or update users' do
-      ability = Ability.new(probie)
+      ability = Ability.new(provisional)
       ability.should_not be_able_to(:create, User)
       ability.should_not be_able_to(:update, User)
     end
     it 'should be a member' do
-      probie.is_member?.should be_true
+      provisional.is_member?.should be_true
     end
   end
 
@@ -51,8 +51,8 @@ describe User do
       mary.email.should eq('mary.smith@example.com')
     end
 
-    it 'should begin life with :prospective role' do
-      new_user.should have_role :prospective
+    it 'should begin life with :provisional role' do
+      new_user.should have_role :provisional
     end
 
     it 'should have unique email address' do
@@ -106,8 +106,8 @@ describe User do
       it { should_not be_able_to(:view, Content.music) }
     end
 
-    context 'when is a prospective member' do
-      let(:user) { FactoryGirl.build(:prospective) }
+    context 'when is a provisional member' do
+      let(:user) { FactoryGirl.build(:provisional) }
 
       it { should be_able_to(:edit, user) }
       it { should be_able_to(:view, Content.vision) }
@@ -121,6 +121,30 @@ describe User do
       it { should be_able_to(:view, Content.values) }
       it { should_not be_able_to(:view, Content.music) }
     end
+
+  end
+
+  describe 'status change' do
+
+    context 'when is founder' do
+      let(:user) { FactoryGirl.create(:founder)}
+      it 'should upgrade to full but retain founder' do
+        user.set_status(:full_member)
+        user.has_role?(:full_member).should be_true
+        user.has_role?(:provisional).should be_false
+        user.has_role?(:founder).should be_true
+      end
+    end
+
+    context 'when is provisional' do
+      let(:user) { FactoryGirl.create(:provisional)}
+      it 'should upgrade to full member' do
+        user.set_status(:full_member)
+        user.has_role?(:full_member).should be_true
+        user.has_role?(:provisional).should be_false
+      end
+    end
+
 
   end
 

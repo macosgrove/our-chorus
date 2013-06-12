@@ -43,7 +43,7 @@ describe UserMailer do
       email = ActionMailer::Base.deliveries.last
       email.should_not be_nil
       email.to.should eq(['ourchorus.info@gmail.com'])
-      email.subject.should eq("We have a new prospective member!")
+      email.subject.should eq("We have a new provisional member!")
 
       email.multipart?.should be false
       #puts "Notification email - html"
