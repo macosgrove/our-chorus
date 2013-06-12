@@ -22,7 +22,7 @@ describe 'founder workflow', :type => :request do
       page.should have_link 'Our Values'
       page.should have_link 'Our Music'
       page.should have_link 'Our Members'
-      page.should have_link 'How we Operate'
+      page.should have_link 'Our Practices'
       page.should have_link 'Sign out'
       page.should_not have_link 'Sign in'
       page.should_not have_link 'Join us!'

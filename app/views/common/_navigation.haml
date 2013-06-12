@@ -17,7 +17,7 @@
         = link_to 'Our Music', static_pages_our_music_path
     - if can? :view, Content.practices
       %li>
-        = link_to 'How we Operate', static_pages_how_we_operate_path
+        = link_to 'Our Practices', static_pages_our_practices_path
     - if user_signed_in?
       %li>
         = link_to "Sign out", destroy_user_session_path, :method => :delete
