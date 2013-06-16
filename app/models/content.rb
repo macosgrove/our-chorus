@@ -32,4 +32,9 @@ class Content
     c.type = :principles
     c
   end
+  def self.grow
+    c = Content.new
+    c.type = :grow
+    c
+  end
 end

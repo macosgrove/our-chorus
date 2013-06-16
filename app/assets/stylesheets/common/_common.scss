@@ -12,5 +12,25 @@
   display: inline-block;
   float: left;
 }
+.half-width {
+  width:  48%;
+}
+.fine-print {
+  font-size: small;
+  line-height: 1.2;
+  margin: 0px;
+  p, ul {
+    margin: 3px;
+  }
+}
+
+ul.bullets {
+  li {
+    list-style: inherit;
+    list-style-type: disc;
+  }
+}
+
+
 
 

@@ -14,8 +14,9 @@ class User
   field :username, :type => String, :default => ""
   field :email, :type => String, :default => ""
   field :encrypted_password, :type => String, :default => ""
+  field :membership, :type => Boolean, :default => true
   attr_accessor :login # will be either username or email
-  attr_accessible :login, :email, :username, :password, :password_confirmation, :first_name, :last_name, :mobile, :about_me, :send_emails
+  attr_accessible :login, :email, :username, :password, :password_confirmation, :first_name, :last_name, :mobile, :about_me, :send_emails, :membership
 
   validates_presence_of :email
   validates_presence_of :encrypted_password
@@ -75,7 +76,7 @@ class User
   end
 
   def pre_create_hook
-    add_role(:provisional)
+    add_role(:prospective)
     self.send_emails = true if self.send_emails == nil
   end
 

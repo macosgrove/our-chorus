@@ -13,6 +13,22 @@ describe User do
 
   end
 
+  describe "Course attendee" do
+    let(:user) { FactoryGirl.build(:course_attendee) }
+    it 'should not be a member' do
+      user.is_member?.should be_false
+    end
+
+  end
+
+  describe "Past member" do
+    let(:user) { FactoryGirl.build(:past_member) }
+    it 'should not be a member' do
+      user.is_member?.should be_false
+    end
+
+  end
+
   describe "Founder" do
     let(:founder) { FactoryGirl.build(:founder) }
     it 'should be allowed to create and update users' do
@@ -25,9 +41,21 @@ describe User do
     end
   end
 
+  describe "prospective member" do
+    let(:prospective) { FactoryGirl.build(:prospective) }
+    it 'should not be allowed to create or update other users' do
+      ability = Ability.new(prospective)
+      ability.should_not be_able_to(:create, User)
+      ability.should_not be_able_to(:update, User)
+    end
+    it 'should not be a member' do
+      prospective.is_member?.should be_false
+    end
+  end
+
   describe "provisional member" do
     let(:provisional) { FactoryGirl.build(:provisional) }
-    it 'should not be allowed to create or update users' do
+    it 'should not be allowed to create or update other users' do
       ability = Ability.new(provisional)
       ability.should_not be_able_to(:create, User)
       ability.should_not be_able_to(:update, User)
@@ -51,8 +79,8 @@ describe User do
       mary.email.should eq('mary.smith@example.com')
     end
 
-    it 'should begin life with :provisional role' do
-      new_user.should have_role :provisional
+    it 'should begin life with :prospective role' do
+      new_user.should have_role :prospective
     end
 
     it 'should have unique email address' do
@@ -94,6 +122,7 @@ describe User do
       it { should be_able_to(:view, Content.vision) }
       it { should be_able_to(:view, Content.values) }
       it { should be_able_to(:view, Content.music) }
+      it { should be_able_to(:view, Content.grow) }
     end
 
     context 'when is a full member' do
@@ -103,15 +132,27 @@ describe User do
       it { should be_able_to(:index, User) }
       it { should be_able_to(:view, Content.vision) }
       it { should be_able_to(:view, Content.values) }
+      it { should be_able_to(:view, Content.grow) }
       it { should_not be_able_to(:view, Content.music) }
     end
 
-    context 'when is a provisional member' do
+    context 'when is a prospective member' do
+      let(:user) { FactoryGirl.build(:prospective) }
+
+      it { should be_able_to(:edit, user) }
+      it { should be_able_to(:view, Content.vision) }
+      it { should be_able_to(:view, Content.values) }
+      it { should be_able_to(:view, Content.grow) }
+      it { should_not be_able_to(:view, Content.music) }
+    end
+
+   context 'when is a provisional member' do
       let(:user) { FactoryGirl.build(:provisional) }
 
       it { should be_able_to(:edit, user) }
       it { should be_able_to(:view, Content.vision) }
       it { should be_able_to(:view, Content.values) }
+      it { should be_able_to(:view, Content.grow) }
       it { should_not be_able_to(:view, Content.music) }
     end
 
@@ -119,6 +160,7 @@ describe User do
       it { should be_able_to(:list, User) }
       it { should be_able_to(:view, Content.vision) }
       it { should be_able_to(:view, Content.values) }
+      it { should be_able_to(:view, Content.grow) }
       it { should_not be_able_to(:view, Content.music) }
     end
 
@@ -127,21 +169,33 @@ describe User do
   describe 'status change' do
 
     context 'when is founder' do
-      let(:user) { FactoryGirl.create(:founder)}
-      it 'should upgrade to full but retain founder' do
+      let(:user) { FactoryGirl.create(:founder) }
+      it 'should progress to full but retain founder' do
         user.set_status(:full_member)
         user.has_role?(:full_member).should be_true
         user.has_role?(:provisional).should be_false
         user.has_role?(:founder).should be_true
+        user.is_member?.should be_true
       end
     end
 
     context 'when is provisional' do
-      let(:user) { FactoryGirl.create(:provisional)}
-      it 'should upgrade to full member' do
+      let(:user) { FactoryGirl.create(:provisional) }
+      it 'should progress to full member' do
         user.set_status(:full_member)
         user.has_role?(:full_member).should be_true
         user.has_role?(:provisional).should be_false
+        user.is_member?.should be_true
+      end
+    end
+
+    context 'when is full member' do
+      let(:user) { FactoryGirl.create(:full_member) }
+      it 'should progress to past member' do
+        user.set_status(:past_member)
+        user.has_role?(:full_member).should be_false
+        user.is_member?.should be_false
+        user.has_role?(:past_member).should be_true
       end
     end
 

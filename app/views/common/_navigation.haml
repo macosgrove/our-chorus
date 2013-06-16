@@ -18,6 +18,9 @@
     - if can? :view, Content.practices
       %li>
         = link_to 'Our Practices', static_pages_our_practices_path
+    - if can? :view, Content.grow
+      %li>
+        = link_to 'Grow With Us', static_pages_grow_your_voice_path
     - if user_signed_in?
       %li>
         = link_to "Sign out", destroy_user_session_path, :method => :delete

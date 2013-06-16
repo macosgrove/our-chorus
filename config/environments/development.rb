@@ -21,4 +21,7 @@ OurChorus::Application.configure do
   # Assets
   config.assets.compress = false
   config.assets.debug = true
+  config.assets.enabled = true
+  config.serve_static_assets = true
+
 end

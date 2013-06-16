@@ -23,6 +23,12 @@ FactoryGirl.define do
        end
     end
 
+    factory :prospective do
+      after(:build) do |user|
+         user.add_role :prospective
+       end
+    end
+
     factory :provisional do
       after(:build) do |user|
          user.add_role :provisional
@@ -32,6 +38,12 @@ FactoryGirl.define do
     factory :course_attendee do
       after(:build) do |user|
          user.add_role :course_attendee
+       end
+    end
+
+    factory :past_member do
+      after(:build) do |user|
+         user.add_role :past_member
        end
     end
 
