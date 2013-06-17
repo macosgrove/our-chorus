@@ -10,7 +10,7 @@
             rule.style[style] = value
 
 jQuery(document).ready ->
-  jQuery(".content").hide()
-  #toggle the component with class msg_body
-  jQuery(".heading").click ->
-    jQuery(this).next(".content").slideToggle 500
+  jQuery(".expandable-content").hide()
+  #toggle the component with class content
+  jQuery(".expandable-heading").click ->
+    jQuery(this).next(".expandable-content").slideToggle 500

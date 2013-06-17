@@ -6,6 +6,8 @@ OurChorus::Application.routes.draw do
   get "static_pages/our_practices"
   get "static_pages/grow_your_voice"
   get "static_pages/grow_your_group"
+  get "/grow-your-group" => "static_pages#grow_your_group"
+  get "/grow-your-voice" => "static_pages#grow_your_voice"
 
   devise_for :users, :path_prefix => 'my', :controllers => { :registrations => "registrations" }
   devise_scope :user do

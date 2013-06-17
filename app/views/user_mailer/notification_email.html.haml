@@ -1,5 +1,5 @@
 %div
-  Hey everybody! We have a new prospective member!
+  Hey everybody! We have a new registrant!
   %div
     %br/
   %div
@@ -16,5 +16,10 @@
     %br/
   %div
     About Me: #{@member.about_me}
+  %div
+    - if @member.has_role? :prospective
+      #{@member.first_name} is a prospective member.
+    - if @member.has_role? :course_attendee
+      #{@member.first_name} will attend the course.
   %div
     %br/

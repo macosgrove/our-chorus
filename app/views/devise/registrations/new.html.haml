@@ -10,7 +10,7 @@
   = devise_error_messages!
   .left.half-width
     %span.checkbox-wrapper
-      =f.input_field :checked_course, as: :boolean, :label => false, :checked => true
+      =f.input_field :checked_course, as: :boolean, :label => false
       %span
     %label{:for => "user_checked_course"} I want to attend the course!
 
@@ -29,7 +29,7 @@
           $20 per week for other non-members
   .left.half-width
     %span.checkbox-wrapper
-      =f.input_field :checked_membership, as: :boolean, :label => false, :checked => true
+      =f.input_field :checked_membership, as: :boolean, :label => false
       %span
     %label{:for => "user_checked_membership"} I want to become a member!
     .fine-print
@@ -55,6 +55,7 @@
       Attach a
       %a{:href => "https://en.gravatar.com/", :target=>"_blank"} Gravatar
       to your email address if you want a picture of yourself to display on our members list, otherwise a random avatar will be assigned to you.
+    = render 'common/payment'
     = render 'common/privacy'
     .actions
       = f.submit 'Register'

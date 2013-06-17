@@ -61,8 +61,8 @@ class User
   field :last_name, type: String
   field :mobile, type: String
   field :about_me, type: String
-  field :checked_membership, type: Boolean
-  field :checked_course, type: Boolean
+  field :checked_membership, type: Boolean, default: true
+  field :checked_course, type: Boolean, default: true
   attr_accessor :send_emails
 
   # function to handle user's login via email or username
