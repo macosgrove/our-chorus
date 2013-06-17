@@ -13,17 +13,20 @@ describe 'public workflow', :type => :request do
       page.should have_content 'Invalid email or password.' #should say 'login' not 'email' WTF?
     end
 
-    it "should allow a potential member to register" do
+    it "should allow a prospective member to register" do
       visit new_user_registration_path
       fill_in 'Email', with: 'new@example.com'
       fill_in 'Username', with: 'newmember'
       fill_in 'user_password', with: 'mypassword'
       fill_in 'user_password_confirmation' , with: 'mypassword'
       fill_in 'About me', with: 'I love singing.'
-      fill_in 'First name', with: 'Maisie'
+      fill_in 'First name', with: 'Samantha'
       fill_in 'Last name', with: 'Jones'
+      uncheck 'user_checked_course'
       click_button 'Register'
-      page.should have_content 'Welcome! You have registered successfully.'
+      page.should have_content 'Welcome Samantha'
+      page.should have_content  'You have successfully registered to join our chorus.'
+      page.should have_content 'Rehearsals are every Wednesday from 7:30pm starting July 10 at Northbridge Uniting Church, Gunyah St, Northbridge'
       visit edit_user_registration_path
       should_be_on 'users/edit'
       page.should have_field('Email', with: 'new@example.com')
@@ -32,8 +35,47 @@ describe 'public workflow', :type => :request do
       page.should have_field('Password confirmation')
       page.should have_field('Current password')
       page.should have_field('About me', with: 'I love singing.')
-      page.should have_field('First name', with: 'Maisie')
+      page.should have_field('First name', with: 'Samantha')
       page.should have_field('Last name', with: 'Jones')
+      #page.should_not have_content('Course attendee')
+      #page.should have_content('member')
+    end
+
+    it "should allow a guest to register to attend our course" do
+      visit new_user_registration_path
+      fill_in 'Email', with: 'new@example.com'
+      fill_in 'Username', with: 'newmember'
+      fill_in 'user_password', with: 'mypassword'
+      fill_in 'user_password_confirmation' , with: 'mypassword'
+      fill_in 'About me', with: 'I love singing.'
+      fill_in 'First name', with: 'Tom'
+      fill_in 'Last name', with: 'Jones'
+      uncheck 'user_checked_membership'
+      click_button 'Register'
+      page.should have_content 'You have successfully registered to attend our course.'
+      page.should have_content 'The course runs every Wednesday from 7:30pm starting July 17 at Northbridge Uniting Church, Gunyah St, Northbridge'
+      visit edit_user_registration_path
+      should_be_on 'users/edit'
+      #page.should have_content('Course attendee')
+      #page.should_not have_content('member')
+    end
+
+    it "should allow a prospective member to register and to attend our course" do
+      visit new_user_registration_path
+      fill_in 'Email', with: 'new@example.com'
+      fill_in 'Username', with: 'newmember'
+      fill_in 'user_password', with: 'mypassword'
+      fill_in 'user_password_confirmation' , with: 'mypassword'
+      fill_in 'About me', with: 'I love singing.'
+      fill_in 'First name', with: 'Maisie'
+      fill_in 'Last name', with: 'Macintosh'
+      click_button 'Register'
+      page.should have_content 'You have successfully registered to join our chorus and attend our course.'
+      page.should have_content 'Rehearsals are every Wednesday from 7:30pm starting July 10 at Northbridge Uniting Church, Gunyah St, Northbridge'
+      visit edit_user_registration_path
+      should_be_on 'users/edit'
+      #page.should_not have_content('Course attendee')
+      #page.should have_content('member')
     end
 
     it 'should show navigational links' do

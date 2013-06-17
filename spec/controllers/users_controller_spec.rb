@@ -54,10 +54,8 @@ describe UsersController do
         FactoryGirl.create(:user, username: 'example')
         get :list, {}
         # macosgrove (founder) and dev (developer) are seeds
-        assigns(:users).first.username.should eq 'macosgrove'
-        assigns(:users).second.username.should eq 'dev'
-        assigns(:users).third.username.should eq 'loggedinuser'
-        assigns(:users).fourth.username.should eq 'example'
+        names = assigns(:users).collect {|user| user.username}
+        verify_names_includes names, ['macosgrove', 'dev', 'loggedinuser', 'example']
       end
     end
 
@@ -94,10 +92,8 @@ describe UsersController do
         FactoryGirl.create(:user, username: 'example')
         get :index, {}
         # macosgrove (founder) and dev (developer) are seeds
-        assigns(:users).first.username.should eq 'macosgrove'
-        assigns(:users).second.username.should eq 'dev'
-        assigns(:users).third.username.should eq 'loggedinuser'
-        assigns(:users).fourth.username.should eq 'example'
+        names = assigns(:users).collect {|user| user.username}
+        verify_names_includes names, ['macosgrove', 'dev', 'loggedinuser', 'example']
       end
     end
 
@@ -111,10 +107,8 @@ describe UsersController do
         FactoryGirl.create(:user, username: 'example')
         get :list, {}
         # macosgrove (founder) and dev (developer) are seeds
-        assigns(:users).first.username.should eq 'macosgrove'
-        assigns(:users).second.username.should eq 'dev'
-        assigns(:users).third.username.should eq 'loggedinuser'
-        assigns(:users).fourth.username.should eq 'example'
+        names = assigns(:users).collect {|user| user.username}
+        verify_names_includes names, ['macosgrove', 'dev', 'loggedinuser', 'example']
       end
     end
 
@@ -139,4 +133,10 @@ describe UsersController do
       end
     end
   end
+
+  def verify_names_includes(actual_names, expected_names)
+    expected_names.each { |name| actual_names.should include name }
+  end
+
+
 end

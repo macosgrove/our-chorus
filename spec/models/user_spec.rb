@@ -65,6 +65,13 @@ describe User do
     end
   end
 
+  describe "default new user" do
+    let(:new_user) { FactoryGirl.build(:user) }
+    it 'should not begin life with :prospective role' do
+      new_user.should_not have_role :prospective
+    end
+  end
+
   describe "saving" do
     let!(:new_user) { FactoryGirl.create(:user,
                                          first_name: 'Mary', last_name: 'Smith', username: 'msmith',
@@ -77,10 +84,6 @@ describe User do
       mary.mobile.should eq('12345')
       mary.about_me.should eq('This is my song.')
       mary.email.should eq('mary.smith@example.com')
-    end
-
-    it 'should begin life with :prospective role' do
-      new_user.should have_role :prospective
     end
 
     it 'should have unique email address' do

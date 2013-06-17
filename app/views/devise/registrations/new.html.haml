@@ -10,13 +10,14 @@
   = devise_error_messages!
   .left.half-width
     %span.checkbox-wrapper
-      %input.check_boxes{id: "course", type: "checkbox",checked: true}
+      =f.input_field :checked_course, as: :boolean, :label => false, :checked => true
       %span
-    %label{:for => "course"} I want to attend
-    = link_to "the course!", static_pages_grow_your_voice_path
+    %label{:for => "user_checked_course"} I want to attend the course!
+
     .fine-print
       %p
-        The course runs for 6 weeks starting July 17 and is:
+        = link_to "The course", static_pages_grow_your_voice_path, :target => '_blank'
+        runs for 6 weeks starting July 17 and is:
       %ul.bullets
         %li
           FREE for members!
@@ -28,12 +29,12 @@
           $20 per week for other non-members
   .left.half-width
     %span.checkbox-wrapper
-      %input.check_boxes{id: "member", type: "checkbox",checked: true}
+      =f.input_field :checked_membership, as: :boolean, :label => false, :checked => true
       %span
-    %label{:for => "member"} I want to become a member!
+    %label{:for => "user_checked_membership"} I want to become a member!
     .fine-print
       %p
-        Membership costs only:
+        Come along and attend your first rehearsal FREE! Membership costs only:
       %ul.bullets
         %li
           $20 per month for students, unemployed and remote members
