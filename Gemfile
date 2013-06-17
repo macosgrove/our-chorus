@@ -36,11 +36,11 @@ group :development, :test do
   gem 'factory_girl'
   gem 'email_spec'
   gem 'faker'
-  gem "mocha", "0.12"
+  gem "mocha"
   gem "database_cleaner", ">= 0.8.0"
   gem "mongoid-rspec", ">= 1.4.6"
-  gem 'guard-spork', '0.3.2'
-  gem 'spork', '0.9.2'
+  gem 'guard-spork'
+  gem 'spork'
   gem 'capybara-webkit'
 end
 

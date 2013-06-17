@@ -9,9 +9,9 @@
     - if can? :manage, User
       %li>
         = link_to 'Our Members', users_path
-      - elsif can? :list, User
-        %li>
-          = link_to 'Our Members', list_users_path
+    - elsif can? :list, User
+      %li>
+        = link_to 'Our Members', list_users_path
     - if can? :view, Content.music
       %li>
         = link_to 'Our Music', static_pages_our_music_path
