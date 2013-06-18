@@ -1,5 +1,6 @@
-//------------------------------------------
-// global layout
+/*------------------------------------------
+  global layout
+  -----------------------------------------*/
 $max-width-size: 980px;
 $page-padding: 20px;
 $gutter: 20px;
@@ -44,4 +45,4 @@ $gutter: 20px;
 }
 #main-header, #main, #main-footer { padding: $gutter $page-padding; }
 hr { margin: $gutter auto; }
-// set to true to choose use a max-width
+/* set to true to choose use a max-width */

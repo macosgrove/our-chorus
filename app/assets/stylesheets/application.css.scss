@@ -2,27 +2,27 @@
 @import "compass/utilities";
 @import "compass/css3";
 @import "compass/css3/user-interface";
-//---------------------------------------------------------------------------------
-// import seeds
+/*---------------------------------------------------------------------------------
+// import seeds  */
 @import "base/base"; // reset, color-palette, typography, etc
 @import "themes/_light_pages_theme"; // use the base-variables in a selected theme.
 @import "elements/elements"; // define visual styles for elements.
 @import "patterns/patterns"; // useful patterns for building.
 @import "sassyseeds";
-//---------------------------------------------------------------------------------
-// layout
+/*---------------------------------------------------------------------------------
+// layout */
 @import "screen_sizes";
 @import "layout";
-//---------------------------------------------------------------------------------
-// common
+/*---------------------------------------------------------------------------------
+// common */
 @import "common/common";
 @import "common/footer";
 @import "common/header";
 @import "common/navigation";
-//---------------------------------------------------------------------------------
-// pages
+/*---------------------------------------------------------------------------------
+// pages  */
 @import "static_pages";
 @import "users";
-//------------------
+/*------------------
 // media queries
-//@import "rwd";
+//@import "rwd";  */

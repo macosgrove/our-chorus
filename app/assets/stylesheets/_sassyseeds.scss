@@ -1,15 +1,11 @@
-//@import url(http:/\/fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic|Exo:200,300,400,500,600,700,800,900,200italic,300italic,400italic,500italic,600italic,900italic,800italic,700italic);
-//@import "compass/utilities";
-//@import "compass/css3";
-//@import "compass/css3/user-interface";
-//---------------------------------------------------------------------------------
-// import seeds
+/*---------------------------------------------------------------------------------
+// import seeds      */
 @import "base/base"; // reset, color-palette, typography, etc
 @import "themes/_light_pages_theme"; // use the base-variables in a selected theme.
 @import "elements/elements"; // define visual styles for elements.
 @import "patterns/patterns"; // useful patterns for building.
-//---------------------------------------------------------------------------------
-// apply visual seeds.
+/*---------------------------------------------------------------------------------
+// apply visual seeds.      */
 body { @include body-style; }
 
 h1 { @include typestyle( h1 ); }
@@ -30,7 +26,7 @@ button, input[type=submit], input[type=button] { @include button; }
 code {
   @include text-input-style;
   @include code-style;
-}//code
+}
 
 input {
   &[type=text],
@@ -39,7 +35,7 @@ input {
   &[type=number],
   &[type=search],
   &[type=url] { @include text-input-style; }
-}//(input)
+}
 
 textarea { @include text-input-style; }
 
@@ -50,6 +46,6 @@ th, td { @include table-cell-style; }
 ::selection { @include selection-pseudo-style; }
 ::-moz-selection { @include selection-pseudo-style; }
 
-//-------------------------------------------------
-// silly shadow dom. inputs are for kids.
+/*-------------------------------------------------
+// silly shadow dom. inputs are for kids. */
 .checkbox-wrapper, .radio-wrapper { @include checkbox-wrapper-style; }
