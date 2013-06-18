@@ -12,5 +12,5 @@
 jQuery(document).ready ->
   jQuery(".expandable-content").hide()
   #toggle the component with class content
-  jQuery(".expandable-heading").click ->
+  jQuery(".expandable-heading").unbind('click').click ->
     jQuery(this).next(".expandable-content").slideToggle 500
