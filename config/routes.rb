@@ -4,6 +4,7 @@ OurChorus::Application.routes.draw do
   get "static_pages/our_values"
   get "static_pages/our_music"
   get "static_pages/our_practices"
+  get "static_pages/contact_us"
   get "static_pages/grow_your_voice"
   get "static_pages/grow_your_group"
   get "/grow-your-group" => "static_pages#grow_your_group"
