@@ -126,6 +126,7 @@ describe User do
       it { should be_able_to(:view, Content.values) }
       it { should be_able_to(:view, Content.music) }
       it { should be_able_to(:view, Content.grow) }
+      it { should be_able_to(:view, Content.materials) }
     end
 
     context 'when is a full member' do
@@ -137,6 +138,7 @@ describe User do
       it { should be_able_to(:view, Content.values) }
       it { should be_able_to(:view, Content.grow) }
       it { should_not be_able_to(:view, Content.music) }
+      it { should be_able_to(:view, Content.materials) }
     end
 
     context 'when is a prospective member' do
@@ -147,6 +149,7 @@ describe User do
       it { should be_able_to(:view, Content.values) }
       it { should be_able_to(:view, Content.grow) }
       it { should_not be_able_to(:view, Content.music) }
+      it { should_not be_able_to(:view, Content.materials) }
     end
 
    context 'when is a provisional member' do
@@ -157,6 +160,7 @@ describe User do
       it { should be_able_to(:view, Content.values) }
       it { should be_able_to(:view, Content.grow) }
       it { should_not be_able_to(:view, Content.music) }
+      it { should be_able_to(:view, Content.materials) }
     end
 
     context 'when is a guest' do
@@ -165,6 +169,7 @@ describe User do
       it { should be_able_to(:view, Content.values) }
       it { should be_able_to(:view, Content.grow) }
       it { should_not be_able_to(:view, Content.music) }
+      it { should_not be_able_to(:view, Content.materials) }
     end
 
   end

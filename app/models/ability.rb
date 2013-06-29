@@ -13,6 +13,7 @@ class Ability
     end
     if user.is_member?
       can :edit, User, :username => user.username
+      can :view, Content, :type => :materials
        if user.has_role? :full_member
         can :manage, User
       end

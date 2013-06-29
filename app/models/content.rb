@@ -37,4 +37,11 @@ class Content
     c.type = :grow
     c
   end
+
+  def self.materials
+    c = Content.new
+    c.type = :materials
+    c
+  end
+
 end

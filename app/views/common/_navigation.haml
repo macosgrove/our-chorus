@@ -21,16 +21,19 @@
     - if can? :view, Content.grow
       %li>
         = link_to 'Grow With Us', static_pages_grow_your_voice_path
-    - if user_signed_in?
+    - if can? :view, Content.materials
       %li>
-        = link_to "Sign out", destroy_user_session_path, :method => :delete
+        = link_to 'Course Materials', static_pages_course_materials_path
+    %li>
+      = link_to 'Contact us', static_pages_contact_us_path
+    - if user_signed_in?
       - if can? :edit, current_user
         %li>
-          = link_to "Change your Details", edit_user_registration_path
+          = link_to "Change my Details", edit_user_registration_path
+      %li>
+        = link_to "Sign out", destroy_user_session_path, :method => :delete
     - else
       %li>
         = link_to "Sign in", new_user_session_path
       %li>
         = link_to "Join us!", new_user_registration_path
-    %li>
-      = link_to 'Contact us', static_pages_contact_us_path

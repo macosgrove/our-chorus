@@ -88,7 +88,8 @@ describe 'public workflow', :type => :request do
       page.should have_link 'Sign in'
       page.should_not have_link 'Sign out'
       page.should have_link 'Join us!'
-      page.should_not have_link 'Change your Details'
+      page.should_not have_link 'Change my Details'
+      page.should_not have_link 'Course Materials'
     end
   end
 

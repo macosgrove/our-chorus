@@ -19,7 +19,8 @@ describe 'registered member workflow', :type => :request do
       page.should_not have_link 'Sign in'
       page.should have_link 'Sign out'
       page.should_not have_link 'Join us!'
-      page.should have_link 'Change your Details'
+      page.should have_link 'Change my Details'
+      page.should have_link 'Course Materials'
     end
   end
 end

@@ -26,6 +26,16 @@
     }
   }
 }
+
+#course-materials {
+  ol {
+    li {
+      list-style: inherit;
+      list-style-type: decimal;
+    }
+  }
+}
+
 #our-values {
   ul.bullets {
     width: 38em;
