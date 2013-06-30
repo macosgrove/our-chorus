@@ -2,6 +2,18 @@
   width: 12em;
 }
 
+.user-page .role {
+  border: {
+    right-style: solid;
+    width: 1px;
+    color: $light-primary;
+  }
+  padding: {
+    left: 0.5em;
+    right: 0.5em;
+  }
+}
+
 #user-edit {
   label {
     display: inline-block;

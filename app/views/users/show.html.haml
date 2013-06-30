@@ -7,6 +7,8 @@
 
 %p#notice= notice
 
+.avatar
+  = image_tag @user.gravatar_url(:default => "monsterid")
 %p
   %b Email:
   = @user.email
@@ -19,6 +21,15 @@
 %p
   %b Mobile:
   = @user.mobile
+%p
+  %b About me:
+  = @user.about_me
+%p
+  %b Roles:
+
+- @user.roles.each do |role|
+  %span.role
+    = role.label
 
 %nav.page-links
   = link_to 'Back', users_path
