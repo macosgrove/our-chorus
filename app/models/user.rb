@@ -16,13 +16,11 @@ class User
   field :encrypted_password, :type => String, :default => ""
   field :membership, :type => Boolean, :default => true
   attr_accessor :login # will be either username or email
-  attr_accessible :login, :email, :username, :password, :password_confirmation, :first_name, :last_name, :mobile, :about_me, :send_emails, :membership, :checked_membership, :checked_course
+  attr_accessible :login, :email, :username, :password, :password_confirmation, :first_name, :last_name, :mobile, :about_me, :send_emails, :membership, :checked_membership, :checked_course, :role_ids
 
   validates_presence_of :email
   validates_presence_of :first_name
   validates_presence_of :encrypted_password
-  validates_presence_of :password
-  validates_presence_of :password_confirmation
   validates_uniqueness_of :username
 
   ## Recoverable
@@ -98,7 +96,11 @@ class User
   end
 
   def set_status(new_status)
-    roles.each { |role| remove_role(role.name) unless role.name=='founder' || role.name=='developer'}
+    roles.each { |role| remove_role(role.name) unless non_assignable_roles.include? role}
     add_role(new_status)
+  end
+
+  def non_assignable_roles
+    roles.select{ |role| Role.non_assignable_roles.include? role}
   end
 end

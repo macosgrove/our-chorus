@@ -75,12 +75,23 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
 
     respond_to do |format|
+      non_assignable_roles = @user.non_assignable_roles
+      retain_non_assignable_roles(params[:user])
       if @user.update_attributes(params[:user])
         format.html { redirect_to @user, notice: 'User was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
         format.json { render json: @user.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  def retain_non_assignable_roles user_param
+    if user_param['role_ids']
+      @user.non_assignable_roles.map{|role| role.id}.each do
+        |non_assignable|
+        user_param['role_ids'].push(non_assignable)
       end
     end
   end

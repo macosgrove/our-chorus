@@ -1,8 +1,11 @@
+.user-page .fixed-width-labels label {
+  width: 12em;
+}
+
 #user-edit {
   label {
     display: inline-block;
     font-weight: normal;
-    width: 12em
   }
   .hint {
     font-style: italic;
@@ -14,9 +17,6 @@
   label {
     display: inline-block;
     font-weight: normal;
-  }
-  .fixed-width-labels label {
-    width: 12em;
   }
   .hint {
     font-style: italic;

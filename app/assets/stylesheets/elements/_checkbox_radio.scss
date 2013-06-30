@@ -19,7 +19,9 @@ $checkbox-size: 1.5em;
   + label {
     line-height: $checkbox-size;
     vertical-align: middle;
-    margin-left: 1em;
+    margin-left: 0.5em;
+    margin-right: 2em;
+    width: auto;
    }
 
   input {

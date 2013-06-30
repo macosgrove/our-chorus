@@ -132,6 +132,37 @@ describe UsersController do
         response.should render_template("users/edit")
       end
     end
+
+    describe "PUT update" do
+      describe "with roles" do
+
+        it "should set the roles contained in the role_ids array" do
+          user = FactoryGirl.create(:user)
+          roles = {:role_ids => [Role.find_or_create_by(name: "full_member"), Role.find_or_create_by(name: "course_attendee")]}
+
+          put :update, {:id => user.to_param, :user => roles}
+
+          assigns(:user).should have_role(:full_member)
+          assigns(:user).should have_role(:course_attendee)
+        end
+
+       it "should remove the roles not contained in the role_ids array except for founder" do
+          user = FactoryGirl.create(:founder)
+          user.add_role(:prospective)
+          roles = {:role_ids => [Role.find_or_create_by(name: "provisional"), Role.find_or_create_by(name: "course_attendee")]}
+
+          put :update, {:id => user.to_param, :user => roles}
+
+          assigns(:user).should have_role(:founder)
+          assigns(:user).should have_role(:provisional)
+          assigns(:user).should have_role(:course_attendee)
+          assigns(:user).should_not have_role(:prospective)
+        end
+      end
+
+    end
+
+
   end
 
   def verify_names_includes(actual_names, expected_names)

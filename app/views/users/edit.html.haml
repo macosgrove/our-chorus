@@ -8,14 +8,24 @@
 %h2
   Change Member Details
 = simple_form_for(@user) do |f|
-  = f.error_notification
-  = f.input :username
-  = f.input :first_name
-  = f.input :last_name
-  = f.input :email
-  = f.input :mobile
-  = f.input :about_me, :as => :text, :input_html => { :cols => 50, :rows => 7 }
-  .actions
-    = f.submit 'Update'
+  .clear.fixed-width-labels
+    = f.error_notification
+    = f.input :username
+    = f.input :first_name
+    = f.input :last_name
+    = f.input :email
+    = f.input :mobile
+    = f.input :about_me, :as => :text, :input_html => { :cols => 50, :rows => 7 }
+  %fieldset
+    %legend Roles
+    - Role.assignable_roles.each do |role|
+      %span.checkbox-wrapper
+        %input.check_boxes.optional{:id => "user_role_ids_#{role.id}", :name => "user[role_ids][]", :type => "checkbox",:checked => @user.has_role?(role.name)?true:nil, :value => "#{role.id}"}
+
+        %span
+      %label{:for => "user_role_ids_#{role.id}"} #{role.label}
+    %input{:name => "user[role_ids][]", :type => "hidden", :value => ""}/
+    .actions
+      = f.submit 'Update'
 %nav.page-links
   = link_to "Back", :back
