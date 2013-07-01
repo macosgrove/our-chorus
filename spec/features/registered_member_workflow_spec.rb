@@ -22,5 +22,10 @@ describe 'registered member workflow', :type => :request do
       page.should have_link 'Change my Details'
       page.should have_link 'Course Materials'
     end
+
+    it 'should allow access to the course materials page' do
+      visit static_pages_course_materials_path
+      page.should have_text 'Grow Your Voice / Grow Your Group - Course Materials'
+    end
   end
 end

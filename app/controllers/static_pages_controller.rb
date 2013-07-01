@@ -17,4 +17,9 @@ class StaticPagesController < ApplicationController
   def grow_your_voice
   end
 
+  def course_materials
+    @content = Content.materials
+    authorize! :view, @content, :type => :materials
+  end
+
 end

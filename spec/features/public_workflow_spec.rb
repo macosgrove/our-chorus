@@ -91,6 +91,11 @@ describe 'public workflow', :type => :request do
       page.should_not have_link 'Change my Details'
       page.should_not have_link 'Course Materials'
     end
+
+    it 'should deny access to the course materials page' do
+      visit static_pages_course_materials_path
+      page.should have_text 'You are not authorized to access this page.'
+    end
   end
 
 end

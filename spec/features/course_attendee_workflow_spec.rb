@@ -24,8 +24,8 @@ describe 'registered member workflow', :type => :request do
     end
 
     it 'should allow access to the course materials page' do
-      visit content_course_materials_path
-      page.should have_text 'Course Materials'
+      visit static_pages_course_materials_path
+      page.should have_text 'Grow Your Voice / Grow Your Group - Course Materials'
     end
   end
 end
