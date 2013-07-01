@@ -11,6 +11,9 @@ class Ability
     if user.has_role? :prospective
       can :edit, User, :username => user.username
     end
+    if user.has_role? :course_attendee
+      can :view, Content, :type => :materials
+    end
     if user.is_member?
       can :edit, User, :username => user.username
       can :view, Content, :type => :materials
