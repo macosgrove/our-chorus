@@ -16,7 +16,7 @@ class User
   field :encrypted_password, :type => String, :default => ""
   field :membership, :type => Boolean, :default => true
   attr_accessor :login # will be either username or email
-  attr_accessible :login, :email, :username, :password, :password_confirmation, :first_name, :last_name, :mobile, :about_me, :send_emails, :membership, :checked_membership, :checked_course, :role_ids
+  attr_accessible :login, :email, :username, :password, :password_confirmation, :first_name, :last_name, :mobile, :about_me, :send_emails, :membership, :role_ids
 
   validates_presence_of :email
   validates_presence_of :first_name
@@ -59,8 +59,6 @@ class User
   field :last_name, type: String
   field :mobile, type: String
   field :about_me, type: String
-  field :checked_membership, type: Boolean, default: true
-  field :checked_course, type: Boolean, default: true
   attr_accessor :send_emails
 
   # function to handle user's login via email or username
@@ -79,12 +77,11 @@ class User
   end
 
   def pre_create_hook
+    add_role(:prospective)
     self.send_emails = true if self.send_emails == nil
   end
 
   def post_create_hook
-    add_role(:prospective) if self.checked_membership
-    add_role(:course_attendee) if self.checked_course
     if self.send_emails
       ::UserMailer.welcome_email(self).deliver
       ::UserMailer.notification_email(self).deliver

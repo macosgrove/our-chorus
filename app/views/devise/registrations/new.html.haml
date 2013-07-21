@@ -8,40 +8,6 @@
 %h2 Register for Our Chorus
 = simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f|
   = devise_error_messages!
-  .left.half-width
-    %span.checkbox-wrapper
-      =f.input_field :checked_course, as: :boolean, :label => false
-      %span
-    %label{:for => "user_checked_course"} I want to attend the course!
-
-    .fine-print
-      %p
-        = link_to "The course", static_pages_grow_your_voice_path, :target => '_blank'
-        runs for 6 weeks starting July 17 and is:
-      %ul.bullets
-        %li
-          FREE for members!
-        %li
-          $10 per week for students and unemployed non-members
-        %li
-          $15 per week for non-members employed part-time
-        %li
-          $20 per week for other non-members
-  .left.half-width
-    %span.checkbox-wrapper
-      =f.input_field :checked_membership, as: :boolean, :label => false
-      %span
-    %label{:for => "user_checked_membership"} I want to become a member!
-    .fine-print
-      %p
-        Come along and attend your first rehearsal FREE! Membership costs only:
-      %ul.bullets
-        %li
-          $20 per month for students, unemployed and remote members
-        %li
-          $25 per month for people employed part-time
-        %li
-          $30 per month for others
   .clear.fixed-width-labels
     = f.input :username
     = f.input :first_name
@@ -55,7 +21,6 @@
       Attach a
       %a{:href => "https://en.gravatar.com/", :target=>"_blank"} Gravatar
       to your email address if you want a picture of yourself to display on our members list, otherwise a random avatar will be assigned to you.
-    = render 'common/payment'
     = render 'common/privacy'
     .actions
       = f.submit 'Register'

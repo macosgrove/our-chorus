@@ -8,16 +8,11 @@ class RegistrationsController < Devise::RegistrationsController
   protected
 
   def set_welcome_message
-    @message = 'You have successfully registered to'
-    @message = @message + ' join our chorus' if current_user.has_role? :prospective
-    @message = @message + ' and' if (current_user.has_role? :prospective) && (current_user.has_role? :course_attendee)
-    @message = @message + ' attend our course' if current_user.has_role? :course_attendee
-    @message = @message + '.'
+    @message = 'Thanks for signing up. We\'re glad to have you on board!'
   end
 
   def set_details_message
-    @details = 'The course runs every Wednesday from 7:30pm starting July 17' if current_user.has_role? :course_attendee
-    @details = 'Rehearsals are every Wednesday from 7:30pm starting July 10' if current_user.has_role? :prospective
+    @details = 'Our founder, Mary-Anne, will be in touch with you soon.' if current_user.has_role? :prospective
   end
 
   def after_sign_up_path_for(resource)

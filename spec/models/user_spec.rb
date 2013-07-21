@@ -66,9 +66,9 @@ describe User do
   end
 
   describe "default new user" do
-    let(:new_user) { FactoryGirl.build(:user) }
-    it 'should not begin life with :prospective role' do
-      new_user.should_not have_role :prospective
+    let(:new_user) { FactoryGirl.create(:user) }
+    it 'should begin life with :prospective role' do
+      new_user.should have_role :prospective
     end
   end
 
