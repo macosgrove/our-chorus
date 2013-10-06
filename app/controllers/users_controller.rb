@@ -75,7 +75,6 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
 
     respond_to do |format|
-      non_assignable_roles = @user.non_assignable_roles
       retain_non_assignable_roles(params[:user])
       if @user.update_attributes(params[:user])
         format.html { redirect_to @user, notice: 'User was successfully updated.' }

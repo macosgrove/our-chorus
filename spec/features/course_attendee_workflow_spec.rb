@@ -11,10 +11,11 @@ describe 'registered member workflow', :type => :request do
 
   context 'the member has logged in' do
     it 'should show navigational links' do
-      page.should have_link 'Our Vision'
+      page.should_not have_link 'Our Vision'
+      page.should have_link 'Our Dream'
       page.should have_link 'Our Values'
       page.should_not have_link 'Our Music'
-      page.should have_link 'Our Members'
+      page.should_not have_link 'Our Members'
       page.should_not have_link 'Our Practices'
       page.should_not have_link 'Sign in'
       page.should have_link 'Sign out'

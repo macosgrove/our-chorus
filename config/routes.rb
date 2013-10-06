@@ -1,6 +1,8 @@
 OurChorus::Application.routes.draw do
 
   get "static_pages/our_vision"
+  get "static_pages/our_dream"
+  get "static_pages/join"
   get "static_pages/our_values"
   get "static_pages/our_music"
   get "static_pages/our_practices"
@@ -21,6 +23,6 @@ OurChorus::Application.routes.draw do
     end
   end
 
-  root :to => 'static_pages#our_vision'
+  root :to => 'static_pages#our_dream'
 
 end

@@ -4,10 +4,8 @@ class Ability
   def initialize(user)
     # See the wiki for details: https://github.com/ryanb/cancan/wiki/Defining-Abilities
     user ||= User.new # guest user (not logged in)
-    can :view, Content, :type => :vision
     can :view, Content, :type => :values
-    can :view, Content, :type => :grow
-    can :list, User
+    can :view, Content, :type => :dream
     if user.has_role? :prospective
       can :edit, User, :username => user.username
     end
@@ -17,9 +15,6 @@ class Ability
     if user.is_member?
       can :edit, User, :username => user.username
       can :view, Content, :type => :materials
-       if user.has_role? :full_member
-        can :manage, User
-      end
       if user.has_role? :founder
         can :manage, :all
       end

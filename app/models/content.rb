@@ -7,6 +7,11 @@ class Content
     c.type = :vision
     c
   end
+  def self.dream
+    c = Content.new
+    c.type = :dream
+    c
+  end
   def self.values
     c = Content.new
     c.type = :values

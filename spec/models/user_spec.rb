@@ -133,10 +133,10 @@ describe User do
       let(:user) { FactoryGirl.build(:full_member) }
 
       it { should be_able_to(:edit, user) }
-      it { should be_able_to(:index, User) }
-      it { should be_able_to(:view, Content.vision) }
+      it { should_not be_able_to(:list, User) }
+      it { should_not be_able_to(:view, Content.vision) }
       it { should be_able_to(:view, Content.values) }
-      it { should be_able_to(:view, Content.grow) }
+      it { should_not be_able_to(:view, Content.grow) }
       it { should_not be_able_to(:view, Content.music) }
       it { should be_able_to(:view, Content.materials) }
     end
@@ -145,9 +145,9 @@ describe User do
       let(:user) { FactoryGirl.build(:prospective) }
 
       it { should be_able_to(:edit, user) }
-      it { should be_able_to(:view, Content.vision) }
+      it { should_not be_able_to(:view, Content.vision) }
       it { should be_able_to(:view, Content.values) }
-      it { should be_able_to(:view, Content.grow) }
+      it { should_not be_able_to(:view, Content.grow) }
       it { should_not be_able_to(:view, Content.music) }
       it { should_not be_able_to(:view, Content.materials) }
     end
@@ -156,18 +156,19 @@ describe User do
       let(:user) { FactoryGirl.build(:provisional) }
 
       it { should be_able_to(:edit, user) }
-      it { should be_able_to(:view, Content.vision) }
+      it { should_not be_able_to(:view, Content.vision) }
       it { should be_able_to(:view, Content.values) }
-      it { should be_able_to(:view, Content.grow) }
+      it { should_not be_able_to(:view, Content.grow) }
       it { should_not be_able_to(:view, Content.music) }
       it { should be_able_to(:view, Content.materials) }
     end
 
     context 'when is a guest' do
-      it { should be_able_to(:list, User) }
-      it { should be_able_to(:view, Content.vision) }
+      it { should be_able_to(:view, Content.dream) }
+      it { should_not be_able_to(:list, User) }
+      it { should_not be_able_to(:view, Content.vision) }
       it { should be_able_to(:view, Content.values) }
-      it { should be_able_to(:view, Content.grow) }
+      it { should_not be_able_to(:view, Content.grow) }
       it { should_not be_able_to(:view, Content.music) }
       it { should_not be_able_to(:view, Content.materials) }
     end

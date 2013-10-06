@@ -41,6 +41,21 @@
     width: 38em;
   }
 }
+
+#our-dream {
+  .sidebar {
+    width: 280px;
+    margin-right: 20px;
+    text-align: center;
+    #big-button {
+      @include button;
+      font-size: 32px;
+      padding: 14px;
+      margin: 3px 0 16px 0;
+    }
+  }
+}
+
 .hero-quote {
 	margin: 1em 2em 2em 2em;
     p {

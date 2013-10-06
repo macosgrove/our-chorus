@@ -1,0 +1,22 @@
+- content_for :title do
+  Our Dream
+- content_for :body_id do
+  our-dream
+- content_for :body_class do
+  public-page
+
+%section#vision.quote
+  .left
+    .left.sidebar
+      #big-button
+        = link_to "Build the Dream!", new_user_registration_path
+      %p
+        We have an exciting opportunity to build for ourselves a new style of singing group. A group that is collaborative and completely democratic.
+      %p
+        A group where every one of us has an equal say in what we sing, how we sing it, who we sing with, and how we operate.
+      %p
+        We need some passionate, committed people to help make this dream a reality. If you find this idea exciting and inspiring
+        = link_to "join us now!", new_user_registration_path
+    .left
+      %iframe{allowfullscreen: "", frameborder: "0", height: "390px", src: "//www.youtube.com/embed/O1MRrxzNn2I?rel=0&autoplay=1", width: "640px"}
+  .clear

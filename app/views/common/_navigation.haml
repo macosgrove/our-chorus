@@ -1,5 +1,8 @@
 %nav#main-nav
   %ul
+    - if can? :view, Content.dream
+      %li>
+        = link_to 'Our Dream', static_pages_our_dream_path
     - if can? :view, Content.vision
       %li>
         = link_to 'Our Vision', static_pages_our_vision_path
